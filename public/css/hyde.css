@@ -249,17 +249,19 @@ a:hover {
 
 .project-card img {
   float: left;
-  width: 250px;
+  /* width: 250px; */
   height: 250px;
 }
 
 .card-left {
-  margin-left: 50%;
+   margin-left: 50%;
 }
 
 .card-left h2 {
   padding-top: 35px;
 }
+
+
 
 
 /* Pagination
