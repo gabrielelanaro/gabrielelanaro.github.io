@@ -7,8 +7,29 @@ layout: default
 <div class="posts">
   {% for post in site.posts %}
     {% if post.categories contains 'work' %}
+    <div class="project-card">
+        <img src="{{post.image}}"/>
+        <div class="card-left">
+          <h2>{{post.title}}</h2>
+          <p>{{post.content}}</p>
+        </div>
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<div class="post">
+  <h1>Where I'm at</h1>
+  <p>I'm currently a PhD candidate in Computational Chemistry at the University of British Columbia. I do molecular simulations, to discover how crystals forms and dissolve. I am passionate about technology and programming, every excuse is good to do some coding. I've worked with Python for many years and I've authored a book for Packt, Python High Performance Programming. But by journey doesn't stop here, I'm constantly trying new things to gain perspective on the problems I face (and also to keep things interesting). </p>
+</div>
+
+<div class="post">
+<h1>Schools and alike</h1>
+    {% for post in site.posts %}
+    {% if post.categories contains 'education' %}
      <h2>{{post.title}}</h2>
         {{post.content}}
     {% endif %}
   {% endfor %}
 </div>
+

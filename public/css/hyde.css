@@ -240,6 +240,27 @@ a:hover {
   color: #9a9a9a;
 }
 
+/* Portfolio Card
+-------------------------------------------------- */
+.project-card {
+  clear: both;
+
+}
+
+.project-card img {
+  float: left;
+  width: 250px;
+  height: 250px;
+}
+
+.card-left {
+  margin-left: 50%;
+}
+
+.card-left h2 {
+  padding-top: 35px;
+}
+
 
 /* Pagination
 -------------------------------------------------- */
