@@ -9,14 +9,15 @@ Inspired by tools such as mdtraj, mdanalysis and (my own) chemlab, I decided tha
 chemview lets you visualize chemical systems in the browser in IPython notebook. It is completely cross platform and fairly easy to install.
 
    # Download chemview
-   $ git clone https://github.com/gabrielelanaro/chemview
-   $ cd chemview
+   git clone https://github.com/gabrielelanaro/chemview
+   cd chemview
    
    # Install dependencies
-   $ pip install ipython-notebook
+   pip install ipython[notebook]
+   pip install numpy
    
    # Install chemview
-   $ pip install .
+   pip install .
 
 Thanks to the IPython notebook now you can visualize chemical systems along with your plots and this opens the possibility of a totally new workflow.
 
