@@ -1,50 +1,19 @@
 ---
 layout: default
 ---
-<!--
-<script type="text/javascript">
-$(document).ready( function() {
-  $(".navigation a").click( function () {
-    var scrollAnchor = $(this).attr('data-scroll'),
-        scrollPoint = $('.post[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
-
-    $('body,html').animate({
-        scrollTop: scrollPoint
-    }, 500);
-
-    return false;
-  });
-
-
-  $(window).scroll(function() {
-    var windscroll = $(window).scrollTop();
-    if (windscroll >= 100) {
-        $('.post').each(function(i) {
-            if ($(this).position().top <= windscroll + 600) {
-                $('.navigation li.active').removeClass('active');
-                $('.navigation li').eq(i).addClass('active');
-            }
-        });
-
-    } else {
-        $('.navigation li.active').removeClass('active');
-        $('.navigation li:first').addClass('active');
-    }
-
-  }).scroll();
-
-});
-</script>
--->
 
 <div class="presentation">
     <h1>Hi, I'm a Python Developer, Scientist and Author.</h1>
+    <h2 id="keepreading"><i class="fa fa-angle-double-down fa-6"></i></h2>
+</div>
+
+<div data-center: "opacity: 0"
+     class="presentation"> 
     <h2>I make performant <b>scientific applications</b>. I wrote the book <b>Python High Performance Programming</b>, and I'm passionate about mobile and web technologies.</h2>
-    <h2><i class="fa fa-angle-double-down fa-6"></i></h2>
 </div>
 
 <div class="projects" data-anchor="projects">
-  <h1>My Projects</h1>
+  <h1>Personal Projects</h1>
   {% for post in site.posts %}
     {% if post.categories contains 'work' %}
     <div class="project">
@@ -69,17 +38,18 @@ $(document).ready( function() {
   {% endfor %}
 </div>
 
+<div class="presentation">
+    <h1>Contact me <br/> </h1>
+    <p>I'm interested in web design/development projects, Android or Python Application development.</p>
+    <p><a href="mailto:gabriele.lanaro@gmail.com"><i class="clickme fa fa-envelope fa-6"></i></a>
+    </p>
+</div>
 
-<div class="post" data-anchor="current">
+<!--
+
+<div class="presentation">
   <h1>Where I'm at</h1>
   <p>I'm currently a PhD candidate in Computational Chemistry at the University of British Columbia. I do molecular simulations, to discover how crystals forms and dissolve. I am passionate about technology and programming, every excuse is good to do some coding. I've worked with Python for many years and I've authored a book for Packt, Python High Performance Programming. But by journey doesn't stop here, I'm constantly trying new things to gain perspective on the problems I face (and also to keep things interesting). </p>
 </div>
-
-<div class="post" data-anchor="education">
-  <h1>Schools and alike</h1>
-  <ul>
-    <li>MsC in Chemistry <b>2012</b></li>
-    <li>BsC in Chemistry <b>2010</b></li>
-  </ul>
-</div>
+-->
 
