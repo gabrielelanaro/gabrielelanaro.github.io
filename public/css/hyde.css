@@ -34,6 +34,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 body {
@@ -254,26 +255,76 @@ a:hover {
   color: #9a9a9a;
 }
 
+/* Self Presentation
+-------------------------------------------------- */
+
+.presentation {
+    height: 100%;
+}
+
+.presentation h1 {
+    margin: 30% auto;
+    margin-bottom: 30px;
+    font-size: 50px;
+    width: 80%;
+    text-align: center;
+}
+
+.presentation h2 {
+    margin: 30px auto;
+    width: 80%;
+    text-align: center;
+    font-size: 35px;
+    font-style: italic;
+}
+
+
 /* Portfolio Card
 -------------------------------------------------- */
-.project-card {
-  position: relative;
+.projects {
+    position: relative;
+    width: 100%;
+    clear: both;
+
 }
 
-.project-card img {
-  float: left;
-  /* width: 250px; */
-  height: 250px;
-}
-
-.card-left {
-  float: right;
-  width: 50%;
+.projects > h1 {
+    width: 100%;
+    text-align: center;
 }
 
 
+.project {
+    position: relative;
+    width: 400px;
+    margin: 40px auto;
+    
+    padding: 20px;
+    box-shadow: 2px 0px 3px #888888;
+}
+.project h2 {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
 
+.project img {
+    width: 300px;
+    margin: 0 auto;
+}
 
+.project-links {
+    float: right;
+}
+
+.project p {
+    font-style: italic;
+}
+
+a.project-link {
+    color: #7688c4;
+}
 /* Pagination
 -------------------------------------------------- */
 
@@ -315,6 +366,7 @@ a:hover {
     margin-left: 40px;
     margin-right: 40px;
   }
+    
 }
 
 @media (min-width: 990px) {
@@ -373,3 +425,4 @@ a:hover {
   }
 
 }
+
