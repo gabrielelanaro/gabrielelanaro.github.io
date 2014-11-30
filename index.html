@@ -4,7 +4,6 @@ layout: default
 
 <div class="presentation">
     <h1>Hi, I'm a Python Developer, Scientist and Author.</h1>
-    <h2 id="keepreading"><i class="fa fa-angle-double-down fa-6"></i></h2>
 </div>
 
 <div data-center: "opacity: 0"
@@ -14,28 +13,30 @@ layout: default
 
 <div class="projects" data-anchor="projects">
   <h1>Personal Projects</h1>
-  {% for post in site.posts %}
-    {% if post.categories contains 'work' %}
-    <div class="project">
-        <a href={{ post.github }} 
-           title="Go to project page">
-            <img 
-                 src="{{post.image}}"/></a>
-        <p>{{post.content}}</p>
-        
-        <div class="project-links">
-              {% if post.github %}
+    <div class="project-list">
+          {% for post in site.posts %}
+            {% if post.categories contains 'work' %}
+            <div class="project">
                 <a href={{ post.github }} 
-                   title="Github" class="project-link"><i class="fa fa-3x fa-github"></i></a>
-              {% endif %}
-              {% if post.docs %}
-                <a href="#" class="project-link"><i calss="fa fa-3x fa-book"></i></a>
-              {% endif %}
-        </div>
-        <div style="clear:both;"></div>
+                   title="Go to project page">
+                    <img 
+                         src="{{post.image}}"/></a>
+                <p>{{post.content}}</p>
+
+                <div class="project-links">
+                      {% if post.github %}
+                        <a href={{ post.github }} 
+                           title="Github" class="project-link"><i class="fa fa-3x fa-github"></i></a>
+                      {% endif %}
+                      {% if post.docs %}
+                        <a href="#" class="project-link"><i calss="fa fa-3x fa-book"></i></a>
+                      {% endif %}
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            {% endif %}
+          {% endfor %}
     </div>
-    {% endif %}
-  {% endfor %}
 </div>
 
 <div class="presentation">

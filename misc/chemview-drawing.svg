@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="chemview-drawing.svg">
   <defs
      id="defs4">
     <filter
@@ -71,7 +71,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="-105.09696"
+     inkscape:cx="-92.443496"
      inkscape:cy="834.95171"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -104,7 +104,10 @@
        height="237.10106"
        x="77.38343"
        y="28.462435"
-       ry="4.4678955" />
+       ry="4.4678955"
+       inkscape:export-filename="C:\Users\Gabriele\Documents\GitHub\gabrielelanaro.github.io\public\chemview-screen.png"
+       inkscape:export-xdpi="91.871597"
+       inkscape:export-ydpi="91.871597" />
     <rect
        style="fill:#ffffff;stroke:none;display:inline"
        id="rect3082"
@@ -112,7 +115,10 @@
        height="200"
        x="83.313606"
        y="60.529949"
-       ry="3.5778174" />
+       ry="3.5778174"
+       inkscape:export-filename="C:\Users\Gabriele\Documents\GitHub\gabrielelanaro.github.io\public\chemview-screen.png"
+       inkscape:export-xdpi="91.871597"
+       inkscape:export-ydpi="91.871597" />
     <rect
        style="fill:#555753;display:inline"
        id="rect3042"
@@ -120,20 +126,29 @@
        height="20.000002"
        x="83.313606"
        y="36.562893"
-       ry="4.1666665" />
+       ry="4.1666665"
+       inkscape:export-filename="C:\Users\Gabriele\Documents\GitHub\gabrielelanaro.github.io\public\chemview-screen.png"
+       inkscape:export-xdpi="91.871597"
+       inkscape:export-ydpi="91.871597" />
     <path
        style="fill:#eeeeec;stroke:none"
        d="m 86.643662,56.54035 c 0,0 6.591511,-12.382537 6.741457,-12.669302 0.0985,-0.188368 1.662458,-3.450056 3.105559,-4.613806 0.91127,-0.734868 2.882661,-1.305628 3.262832,-1.299199 0.44615,0.0075 57.4806,0.29634 57.4806,0.29634 1.60714,0.08929 2.08486,0.410352 2.627,1.006131 0.54214,0.595779 1.06343,1.425655 1.23879,1.663841 0.17536,0.238186 7.75816,12.756165 7.75816,12.756165 L 410.1894,52.762653 c 0.0809,4.154815 -1.98633,3.209978 -3.4136,3.778523 z"
        id="path3377"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="csasczzcccc" />
+       sodipodi:nodetypes="csasczzcccc"
+       inkscape:export-filename="C:\Users\Gabriele\Documents\GitHub\gabrielelanaro.github.io\public\chemview-screen.png"
+       inkscape:export-xdpi="91.871597"
+       inkscape:export-ydpi="91.871597" />
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#2e3436;fill-opacity:1;stroke:none;display:inline;font-family:Source Code Pro;-inkscape-font-specification:Source Code Pro"
        x="98.660591"
        y="51.785213"
        id="text3044"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\Gabriele\Documents\GitHub\gabrielelanaro.github.io\public\chemview-screen.png"
+       inkscape:export-xdpi="91.871597"
+       inkscape:export-ydpi="91.871597"><tspan
          sodipodi:role="line"
          id="tspan3046"
          x="98.660591"
@@ -141,7 +156,10 @@
     <g
        id="g3074"
        transform="matrix(0.79304193,0,0,0.79304193,97.475741,-74.731369)"
-       style="fill:#2e3436;display:inline">
+       style="fill:#2e3436;display:inline"
+       inkscape:export-filename="C:\Users\Gabriele\Documents\GitHub\gabrielelanaro.github.io\public\chemview-screen.png"
+       inkscape:export-xdpi="91.871597"
+       inkscape:export-ydpi="91.871597">
       <rect
          ry="5.8083773"
          y="142.55266"
@@ -185,7 +203,10 @@
        height="13.434011"
        width="380.42035"
        id="rect3090"
-       style="fill:#babdb6;display:inline" />
+       style="fill:#babdb6;display:inline"
+       inkscape:export-filename="C:\Users\Gabriele\Documents\GitHub\gabrielelanaro.github.io\public\chemview-screen.png"
+       inkscape:export-xdpi="91.871597"
+       inkscape:export-ydpi="91.871597" />
     <image
        y="61.545174"
        x="87.595078"
@@ -608,7 +629,10 @@ P3/+9u3bewwJAAAAW+j8/HypqYZ3587vv/++2+1++PDhHqMCAADAVvnw4cPr16+//fbbxS/55Orq
 AElFTkSuQmCC
 "
        height="165.03755"
-       width="374.05722" />
+       width="374.05722"
+       inkscape:export-filename="C:\Users\Gabriele\Documents\GitHub\gabrielelanaro.github.io\public\chemview-screen.png"
+       inkscape:export-xdpi="91.871597"
+       inkscape:export-ydpi="91.871597" />
     <image
        y="87.174164"
        x="291.94687"
@@ -2381,6 +2405,9 @@ ASTQhRBCiBXg/wGfmCNYNlBP0gAAAABJRU5ErkJggg==
        width="232.81467"
        clip-path="url(#clipPath3205)"
        transform="matrix(0.77367204,0,0,0.77367204,68.042451,44.107101)"
-       style="filter:url(#filter3148)" />
+       style="filter:url(#filter3148)"
+       inkscape:export-xdpi="91.871597"
+       inkscape:export-ydpi="91.871597"
+       inkscape:export-filename="C:\Users\Gabriele\Documents\GitHub\gabrielelanaro.github.io\public\chemview-screen.png" />
   </g>
 </svg>
