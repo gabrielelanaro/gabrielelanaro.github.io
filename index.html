@@ -1,35 +1,85 @@
 ---
 layout: default
 ---
-<div class="post">
-  <h1>Stuff I did in my free time</h1>
+<!--
+<script type="text/javascript">
+$(document).ready( function() {
+  $(".navigation a").click( function () {
+    var scrollAnchor = $(this).attr('data-scroll'),
+        scrollPoint = $('.post[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
+
+    $('body,html').animate({
+        scrollTop: scrollPoint
+    }, 500);
+
+    return false;
+  });
+
+
+  $(window).scroll(function() {
+    var windscroll = $(window).scrollTop();
+    if (windscroll >= 100) {
+        $('.post').each(function(i) {
+            if ($(this).position().top <= windscroll + 600) {
+                $('.navigation li.active').removeClass('active');
+                $('.navigation li').eq(i).addClass('active');
+            }
+        });
+
+    } else {
+        $('.navigation li.active').removeClass('active');
+        $('.navigation li:first').addClass('active');
+    }
+
+  }).scroll();
+
+});
+</script>
+-->
+
+<div class="presentation">
+    <h1>Hi, I'm a Python Developer, Scientist and Author.</h1>
+    <h2>I make performant <b>scientific applications</b>. I wrote the book <b>Python High Performance Programming</b>, and I'm passionate about mobile and web technologies.</h2>
+    <h2><i class="fa fa-angle-double-down fa-6"></i></h2>
 </div>
-<div class="posts">
+
+<div class="projects" data-anchor="projects">
+  <h1>My Projects</h1>
   {% for post in site.posts %}
     {% if post.categories contains 'work' %}
-    <div class="project-card">
-        <img src="{{post.image}}"/>
-        <div class="card-left">
-          <h2>{{post.title}}</h2>
-          <p>{{post.content}}</p>
+    <div class="project">
+        <a href={{ post.github }} 
+           title="Go to project page">
+            <img 
+                 src="{{post.image}}"/></a>
+        <p>{{post.content}}</p>
+        
+        <div class="project-links">
+              {% if post.github %}
+                <a href={{ post.github }} 
+                   title="Github" class="project-link"><i class="fa fa-3x fa-github"></i></a>
+              {% endif %}
+              {% if post.docs %}
+                <a href="#" class="project-link"><i calss="fa fa-3x fa-book"></i></a>
+              {% endif %}
         </div>
+        <div style="clear:both;"></div>
     </div>
     {% endif %}
   {% endfor %}
 </div>
 
-<div class="post">
+
+<div class="post" data-anchor="current">
   <h1>Where I'm at</h1>
   <p>I'm currently a PhD candidate in Computational Chemistry at the University of British Columbia. I do molecular simulations, to discover how crystals forms and dissolve. I am passionate about technology and programming, every excuse is good to do some coding. I've worked with Python for many years and I've authored a book for Packt, Python High Performance Programming. But by journey doesn't stop here, I'm constantly trying new things to gain perspective on the problems I face (and also to keep things interesting). </p>
 </div>
 
-<div class="post">
-<h1>Schools and alike</h1>
-    {% for post in site.posts %}
-    {% if post.categories contains 'education' %}
-     <h2>{{post.title}}</h2>
-        {{post.content}}
-    {% endif %}
-  {% endfor %}
+<div class="post" data-anchor="education">
+  <h1>Schools and alike</h1>
+  <ul>
+    <li>MsC in Chemistry <b>2012</b></li>
+    <li>BsC in Chemistry <b>2010</b></li>
+  </ul>
 </div>
 

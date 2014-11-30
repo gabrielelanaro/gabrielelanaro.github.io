@@ -78,6 +78,10 @@ li {
   color: #888580;
 }
 
+ul {
+  list-style: none;
+}
+
 hr {
   position: relative;
   margin: 40px 0;
@@ -209,6 +213,16 @@ a:hover {
   color: #7a7a7a;
 }
 
+.navigation ul {
+    width: 100%;
+    visibility: hidden;
+}
+
+.navigation li {
+  display: inline;
+}
+
+
 /* Footer area of masthead */
 .colophon {
   margin-top: 20px;
@@ -243,8 +257,7 @@ a:hover {
 /* Portfolio Card
 -------------------------------------------------- */
 .project-card {
-  clear: both;
-
+  position: relative;
 }
 
 .project-card img {
@@ -254,11 +267,8 @@ a:hover {
 }
 
 .card-left {
-   margin-left: 50%;
-}
-
-.card-left h2 {
-  padding-top: 35px;
+  float: right;
+  width: 50%;
 }
 
 
