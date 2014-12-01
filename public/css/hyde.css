@@ -455,6 +455,11 @@ i.clickme {
         padding: 10px;
     }
     
+    .projects h1 {
+        font-size: 3em;
+        margin: 5% 0;
+    }
+    
     .presentation h1 {
         font-size: 3em;
         margin: 10%;
@@ -482,7 +487,7 @@ i.clickme {
   }
     
     #page1 {
-        height: 60vh;
+        min-height: 60vh;
     }
     #page1 h1 {
         position:relative;
@@ -491,7 +496,7 @@ i.clickme {
     
     #page2 {
         position: relative;
-        height: 80vh;
+        min-height: 80vh;
     }
     
     #page2 h2 {
