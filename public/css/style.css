@@ -184,6 +184,10 @@ a:hover {
 
 /* Header */
 
+header {
+    position:relative;
+}
+
 .masthead {
   color: #fff;
   background-color: #2a2a2a;
@@ -218,18 +222,35 @@ nav ul li {
 /* Colophon */
 
 .colophon {
-    float: right;
-    right: 100px;
-  color: #7a7a7a;
-}
-.colophon-links li {
-    list-style: none;
-    display: inline;
-    padding: 10px;
-    position: relative;
-    top: 10px;
+    position: absolute;
+    top: 120px;
+    width: 100%;
+    display: table;
 }
 
+
+.colophon-links {
+    display: table;
+    list-style: none;
+    width: 100%;
+}
+
+.colophon-links li {
+    text-align: center;
+    display: table-cell;
+}
+
+.colophon-links li a {
+    color: #000;    
+}
+
+/* Footer */
+footer {
+    height: 40px;
+    padding: 10px;
+    width: 100%;
+    border-top: 1px solid #cccccc;
+}
 
 /* Pagination
 -------------------------------------------------- */
@@ -323,7 +344,28 @@ i.clickme {
         padding: 0;
     }
 
+    .colophon {
+        /* Reset */
+        position: relative;
+        top: 0;
+        width: auto;
+        
+        float: right;
+        right: 50px;
+        color: #7a7a7a;
+    }
 
+    .colophon-links li {
+        list-style: none;
+        display: inline;
+        padding: 10px;
+        position: relative;
+        top: 10px;
+    }
+ 
+    .colophon-links li a {
+        color: #FFF;    
+    }
     /* Remove mobile device padding from list of posts */
     .posts {
         margin-left: 0;

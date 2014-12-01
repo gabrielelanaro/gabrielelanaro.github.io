@@ -88,12 +88,24 @@ First we define the mobile interface, then we apply modification for actual widt
 
 /* Project link icons */
 a.project-link {
-    
-    transition: all 0.5s ease;
+/*    transition: all 0.1s ease;*/
 }
 
 a.project-link:hover {
     color: #000 !important;
+}
+
+
+/* Specific styles */
+#contact-info h1 {
+    font-size: 3em;
+    padding: 0;
+    margin: 0 auto;
+}
+
+#contact-info p {
+    padding: 1em;
+    margin: 0 auto;
 }
 
 @media (min-width: 760px) {
@@ -114,26 +126,20 @@ a.project-link:hover {
         display: table-cell;
         width: auto;
         margin: 0;
-        transition: 0.5s ease;
+        transition: 0.2s ease;
     }
     
     div.project:hover {
         transform: scale(1.1);
     }
-}
-
-@media (min-width: 990px) {
-
-    /* Fine tuning for first and second page of the index */
-    /* TODO: move in file index.css */
     
-    #page1 {
+        #page1 {
         min-height: 60vh;
     }
     
     #page1 h1 {
         position:relative;
-        top: 80px;
+        top: 5vh;
     }
     
     #page2 {
@@ -149,6 +155,14 @@ a.project-link:hover {
         width: 25%;
         margin: 0 auto;
     }
+}
+
+@media (min-width: 990px) {
+
+    /* Fine tuning for first and second page of the index */
+    /* TODO: move in file index.css */
+    
+
     /* Put the projects */
     .projects h1 {
         font-size: 3em;
