@@ -1,13 +1,14 @@
 ---
 layout: default
+stylesheet: /public/css/index.css
 ---
 
 <script type="text/javascript" src="public/js/skrollr.min.js.txt"></script>
 <script>
     $( function () {
-        if (window.innerWidth > 960) {
+//        if (window.innerWidth > 960) {
             skrollr.init();
-        };
+//        };
     });
 </script>
 
@@ -42,11 +43,25 @@ layout: default
                 <div class="project-links">
                       {% if post.github %}
                         <a href={{ post.github }} 
-                           title="Github" class="project-link"><i class="fa fa-3x fa-github"></i></a>
+                           title="Github" style="color: #7688c4;" 
+                           target="_blank"
+                           class="project-link"><i class="fa fa-3x fa-github"></i></a>
                       {% endif %}
-                      {% if post.docs %}
-                        <a href="#" class="project-link"><i calss="fa fa-3x fa-book"></i></a>
+                      {% if post.android %}
+                        <a href="{{post.android}}"
+                           title="Play Store"
+                           target="_blank"
+                           style="color: #A4C639;"
+                           class="project-link" css><i class="fa fa-3x fa-android"></i></a>
                       {% endif %}
+                      {% if post.website %}
+                        <a href="{{post.website}}"
+                           title="Website"
+                           target="_blank"
+                           style="color: #31c3e7;" 
+                           class="project-link"><i class="fa fa-3x fa-globe"></i></a>
+                      {% endif %}
+                    
                 </div>
                 <div style="clear:both;"></div>
             </div>
@@ -56,7 +71,7 @@ layout: default
 </div>
 
 <div class="presentation">
-    <h1>Contact me <br/> </h1>
+    <h2>Contact me</h2>
     <p>I'm interested in web design/development projects, Android or Python Application development.</p>
     <p><a href="mailto:gabriele.lanaro@gmail.com"><i class="clickme fa fa-envelope fa-6"></i></a>
     </p>

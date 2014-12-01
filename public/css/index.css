@@ -1,0 +1,167 @@
+/* Custom style for index.html 
+------------------------------
+
+First we define the mobile interface, then we apply modification for actual width
+
+*/
+
+/* Presentation classes 
+------------------------*/
+
+.presentation {
+    padding: 10% 0;
+}
+
+/* To deliver a string message */
+.presentation h1 {
+    font-size: 2em;
+    text-align: center;
+    
+    margin: 30% auto;
+    width: 80%;
+}
+
+/* To deliver a less strong message */
+.presentation h2,
+.presentation p {
+    font-size: 1em;
+    font-style: italic;
+    text-align: center;
+
+    margin: 15% auto;
+    width: 80%;
+}
+
+.presentation img {
+    margin: 0 auto;
+    width: 50%;
+}
+
+/* Projects 
+--------------*/
+
+.projects {
+    position: relative;
+    width: 100%;
+}
+
+/* Text title */
+.projects h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.projects p {}
+/* Project card */
+
+.project {
+    /* Layout */
+    margin: 40px auto;
+    max-width: 400px;
+    padding: 20px;
+    position: relative;
+    width: 80%;
+    padding-bottom: 45px;
+    
+    /* Style */
+    box-shadow: 2px 0px 3px #888888;
+}
+
+.project img {
+    margin: 0 auto;
+    width: 80%;
+}
+
+/* Icon buttons centered at the bottom */
+.project-links {
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    left: 25%;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.project p {
+    font-style: italic;
+}
+
+/* Project link icons */
+a.project-link {
+    
+    transition: all 0.5s ease;
+}
+
+a.project-link:hover {
+    color: #000 !important;
+}
+
+@media (min-width: 760px) {
+    .projects {
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Make them on the same line if there's space */
+    
+    .project-list {
+        display: table;
+        border-collapse: separate;
+        border-spacing: 30px;
+    }
+    
+    .project {
+        display: table-cell;
+        width: auto;
+        margin: 0;
+        transition: 0.5s ease;
+    }
+    
+    div.project:hover {
+        transform: scale(1.1);
+    }
+}
+
+@media (min-width: 990px) {
+
+    /* Fine tuning for first and second page of the index */
+    /* TODO: move in file index.css */
+    
+    #page1 {
+        min-height: 60vh;
+    }
+    
+    #page1 h1 {
+        position:relative;
+        top: 80px;
+    }
+    
+    #page2 {
+        position: relative;
+        min-height: 80vh;
+    }
+    
+    #page2 h2 {
+        font-size: 2.5em;
+    }
+
+    #page2 img {
+        width: 25%;
+        margin: 0 auto;
+    }
+    /* Put the projects */
+    .projects h1 {
+        font-size: 3em;
+        margin: 5% 0;
+    }
+    
+    .presentation h1 {
+        font-size: 3em;
+        margin: 10%;
+    }
+    
+    .presentation h2 {
+        font-size: 1em;
+        margin: 10%;
+    }
+}
