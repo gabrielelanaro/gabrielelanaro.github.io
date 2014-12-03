@@ -24,10 +24,13 @@
 
     <!-- RSS -->
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+      {% if site.analytics %}
+          {% include google_analytics.html %}
+      {% endif %}
   </head>
   <body>
 
-    <header class="masthead">
+    <header class="masthead"> 
       <div class="masthead-inner">
         <a href="/"><h1>Gabriele Lanaro</h1></a>
 <!--        <p class="lead">Obsessive compulsive developer, scientist and author.</p>-->
@@ -53,8 +56,6 @@
             </li>
           </ul>
         </div>
-        
-        
     </header>
 
     <div class="content container">

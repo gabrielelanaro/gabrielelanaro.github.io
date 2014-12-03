@@ -10,3 +10,4 @@ github_username:  gabrielelanaro
 
 # Build settings
 markdown: kramdown
+analytics: true
