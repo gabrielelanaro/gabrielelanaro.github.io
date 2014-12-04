@@ -63,3 +63,5 @@ the protein using a cylinder and strand representation.
 
 
 Want to know more? Check out the handcrafted [docs](https://chemview.readthedocs.org).
+
+If you like the idea, give it a test and tell me how it goes :)
