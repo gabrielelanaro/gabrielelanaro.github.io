@@ -14,7 +14,7 @@ In the past month I've developed Chemview, an IPython notebook extensions that l
 ## Demo
 
 Viewing stuff in chemview is fairly easy. But since it deals only with
-visualization we will use another program (mdtraj) to pull data from the web.
+visualization we will use another program ([mdtraj](http://mdtraj.org)) to pull data from the web.
 
     import mdtraj as md
     traj = md.load_pdb('2M6K.pdb')
