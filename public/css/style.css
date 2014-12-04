@@ -304,6 +304,15 @@ footer {
     left: 100%;
 }
 
+/* Share links */
+.share-buttons {
+	list-style: none;
+}
+
+.share-buttons li{
+	display: inline-block;
+}
+
 
 /* Pagination
 -------------------------------------------------- */
