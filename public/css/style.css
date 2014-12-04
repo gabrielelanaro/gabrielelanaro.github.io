@@ -14,6 +14,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow-x: hidden;
 }
 
 
@@ -41,6 +42,11 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     margin-top: 20px;
     font-size: 2em;
+}
+
+h1.title {
+    font-size: 2.3em;
+    margin-bottom: 30px;
 }
 
 h2 {
@@ -182,6 +188,11 @@ a:hover {
 /* Layout
 -------------------------------------------------- */
 
+.container {
+    width: 80%;
+    margin: 90px auto 0 auto;
+}
+
 /* Header */
 
 header {
@@ -217,6 +228,18 @@ nav ul {
 nav ul li {
     display: table-cell;
     text-align:center;
+    position: relative;
+}
+
+.active:before {
+    content: '';
+    background-color: #2a2a2a;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    bottom: -8px;
+    border-radius: 0 0 6px 6px;
+    left: 0;
 }
 
 /* Colophon */
@@ -224,24 +247,28 @@ nav ul li {
 .colophon {
     position: absolute;
     top: 120px;
-    width: 100%;
-    display: table;
+    right: 0;
 }
 
 
 .colophon-links {
-    display: table;
     list-style: none;
     width: 100%;
 }
 
 .colophon-links li {
     text-align: center;
-    display: table-cell;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 7px;
+    background: #3465a4;
+    box-shadow: 0 2px 2px #cccccc;
 }
 
-.colophon-links li a {
-    color: #000;    
+.colophon-links li {
+    color: #fff;    
 }
 
 /* Footer */
@@ -251,6 +278,32 @@ footer {
     width: 100%;
     border-top: 1px solid #cccccc;
 }
+
+/* Posts */
+.post-link {
+    background-color: #e9b963;
+    position: relative;
+    padding: 4px;
+}
+
+/* full size background trick */
+.post-link:before, .post-link:after {
+    content: "";
+    position: absolute;
+    background-color: #e9b963;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+}
+
+.post-link:before {
+    right: 100%;
+}
+
+.post-link:after {
+    left: 100%;
+}
+
 
 /* Pagination
 -------------------------------------------------- */
@@ -290,11 +343,17 @@ i.clickme {
 -------------------------------------------------- */
 
 @media (min-width: 768px) {
-
+/*
+    .content {
+        width: 80%;
+    }
+*/
 } 
 
 @media (min-width: 990px) {
 
+    
+    /* Layout and default */
     body {
         font-size: 18px;
     }
@@ -306,7 +365,8 @@ i.clickme {
     /* Center container in available real estate */
     .container {
         margin: 0 auto;
-        width: 80%;
+        margin-top: 120px;
+        width: 1170px;
     }
 
     /* Make a fixed top navigation bar
@@ -357,13 +417,26 @@ i.clickme {
 
     .colophon-links li {
         list-style: none;
-        display: inline;
-        padding: 10px;
+        display: inline-block;
+        padding: 7px;
         position: relative;
-        top: 10px;
+        top: 0px;
+        width: 50px;
+        height: 50px;
+        
+        /* Undo the mobile view */
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0;
+        background: #3465a4;
+        
+        transition: 0.5s ease;
     }
  
-    .colophon-links li a {
+    .colophon-links li:hover {
+        height: 60px;
+    }
+    .colophon-links li {
         color: #FFF;    
     }
     /* Remove mobile device padding from list of posts */

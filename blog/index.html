@@ -1,12 +1,27 @@
 ---
-layout: page
-title: Blog
+layout: default
 ---
 
 
+
+{% assign post = site.posts.first %}
+{% assign content = post.content %}
+
+<!-- We display the first post -->
+
+<h1 class="title">{{post.title}}</h1>
+{{ post.content }}
+
+{% if post.comments %}
+{% include disqs.html %}
+{% endif %}
+<!--
 {% for post in site.posts %}
     {% if post.categories contains "blog" %}
-        <p>{{post.title}}</p>
-        <a href="{{ post.url }}">Link</a>
+       <div class="post-link">
+            <a href="{{ post.url }}">{{post.title}}</a>
+            <p>{{post.date | date: "%-d %B %Y"}}</p>
+       </div>
+
     {% endif %}
-{% endfor %}
+{% endfor %}-->

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link href="/public/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <script type="text/javascript" src="/public/js/jquery-1.11.1.min.js"></script>
@@ -21,7 +21,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="/public/favicon.png">
     <link rel="stylesheet" href="/public/css/font-awesome.css">
-
+    <link rel="stylesheet" href="/public/css/zenburn.css">
+   
     <!-- RSS -->
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
       {% if site.analytics %}
@@ -38,22 +39,21 @@
       </div>
         <nav>
             <ul>
+                {% assign current = page.url | downcase | split: '/' %}
                 <li>. . .</li>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/blog">Blog</a></li>
+                <li {% if current.size == 1 %}class="active"{% endif %}><a href="/">Home</a></li>
+                <li {% if current[1] == 'about' %}class="active"{% endif %}><a href="/about">About</a></li>
+                <li {% if current[1] == 'blog' %}class="active"{% endif %}><a href="/blog">Blog</a></li>
                 <li>. . .</li>
             </ul>
         </nav>
         
         <div class="colophon">
           <ul class="colophon-links">
-            <li>
-              <a href="https://github.com/gabrielelanaro"><i class="fa fa-github-alt"></i> Github</a>
-            </li>
-            <li>
-              <a href="mailto:gabriele.lanaro@gmail.com"><i class="fa fa-envelope-o"></i> Email</a>
-            </li>
+              <a href="https://github.com/gabrielelanaro"
+                 title="Github"><li><i class="fa fa-github-alt fa-2"></i></li></a>
+              <a href="mailto:gabriele.lanaro@gmail.com"
+                 title="Email"><li><i class="fa fa-envelope-o fa-2"></i></li></a>
           </ul>
         </div>
     </header>

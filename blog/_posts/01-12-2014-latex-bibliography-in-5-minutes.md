@@ -3,13 +3,14 @@ title: Write your custom latex bibliography style in 5 minutes
 layout: page
 tags: latex, tutorial
 categories: blog
+comments: true
 ---
 
 You're ready to submit your paper, but there's one last thing your supervisor/publisher/teacher requests you, only a _slight_ modification to the bibliography style:
 
 > Why don't you put the date in bold, and semicolon between author names?
 
-Latex distributions usually come with plenty of styles available, and most scientific journals provide their own style. Sometimes however this is not enough as for a reason or another you have to resort to a custom style. Altought the process is not as straighforward as I expected it to be (as often happens with LaTeX), it is definitely simple. 
+Latex distributions come with plenty of styles available, and some of them come directly from  journal publishers. Sometimes those are not enough and you have to resort to make a custom style. Altought the process is not as straighforward as I expected it to be (as often happens with LaTeX), it is definitely simple. 
 
 When you include a bibliography with bibtex, you tipically have a structure like this:
 
@@ -40,14 +41,18 @@ This program will ask you questions and build a custom bibliography style. It's 
 
 To apply your new style (let's assume you assigned the filename mystyle.bst), issue the following commands to install the style file locally:
 
-   mkdir -p ~/texmf/bibtex/bst
-   cp mystyle.bst ~/texmf/bibtex/bst/
-   texhash ~/texmf # Make TeX aware of what you just did
+{% highlight bash %}
+mkdir -p ~/texmf/bibtex/bst
+cp mystyle.bst ~/texmf/bibtex/bst/
+texhash ~/texmf # Make TeX aware of what you just did
+{% endhighlight %}
 
 Finally, apply the bibliography style in the main.tex file.
 
-   \bibliographystyle{mystyle}
+{% highlight latex %}
+\bibliographystyle{mystyle}
+{% endhighlight %}
 
 Submit, grab a cup of coffee, and relax.
 
-Source: http://chgarms.com/archives/87
+Source: [http://chgarms.com/archives/87](http://chgarms.com/archives/87)

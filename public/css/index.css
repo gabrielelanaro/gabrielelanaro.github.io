@@ -5,6 +5,18 @@ First we define the mobile interface, then we apply modification for actual widt
 
 */
 
+
+/* Override to make skrollr work */
+
+body, html {
+    overflow-x: visible;
+}
+
+.container {
+    width: auto;
+    margin: 0;
+}
+
 /* Presentation classes 
 ------------------------*/
 
@@ -161,7 +173,10 @@ a.project-link:hover {
 
     /* Fine tuning for first and second page of the index */
     /* TODO: move in file index.css */
-    
+    .container {
+        margin: 0 auto;
+        width: 80%;
+    }
 
     /* Put the projects */
     .projects h1 {
