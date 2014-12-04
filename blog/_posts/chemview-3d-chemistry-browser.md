@@ -35,5 +35,31 @@ the protein using a cylinder and strand representation.
     mv.cylinder_and_strand()
     mv
 
+<div>
+<script type="text/javascript" src="https://rawgit.com/gabrielelanaro/chemview/master/docs/source/_static/js/jquery.js"></script>
+<script type="text/javascript" src="https://rawgit.com/gabrielelanaro/chemview/master/docs/source/_static/js/three.min.js"></script>
+<script type="text/javascript" src="https://rawgit.com/gabrielelanaro/chemview/master/docs/source/_static/js/ArcballControls.js"></script>
+<script type="text/javascript" src="https://rawgit.com/gabrielelanaro/chemview/master/docs/source/_static/js/base64-arraybuffer.js"></script>
+<script type="text/javascript" src="https://rawgit.com/gabrielelanaro/chemview/master/docs/source/_static/js/chemview.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var canvas = $("#molecular_viewer").css({width: 400, height: 400});
+        var mv = new MolecularViewer(canvas);
+
+        $.getJSON('https://rawgit.com/gabrielelanaro/chemview/master/docs/source/_static/protein_cylinder_strand.json', function (data){
+            mv.deserialize(data);
+            mv.animate();
+            mv.controls.dollyIn(1.8);
+        });
+
+        mv.resize(canvas.width(), canvas.height());
+    });
+
+</script>
+
+<canvas id="molecular_viewer"></canvas>
+</div>
+
 
 Want to know more? Check out the handcrafted [docs](https://chemview.readthedocs.org).
