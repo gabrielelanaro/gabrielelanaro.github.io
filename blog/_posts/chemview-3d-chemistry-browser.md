@@ -11,7 +11,29 @@ In the past month I've developed Chemview, an IPython notebook extensions that l
  - You don't have to go through weird installation procedures. Chemview is a pure python module installable with pip, and, since it runs in the browser, it is automatically mutliplatform *and mobile enabled*.
  - You can build new way to visualize data using the convenient syntax of python. You can *create* new, more meaningful ways to display your result, so that you can find the patterns you're looking for.
 
+## Demo
 
-.. Include a notebook tutorial
+Viewing stuff in chemview is fairly easy. But since it deals only with
+visualization we will use another program (mdtraj) to pull data from the web.
 
-How about docs? Nice and clean at this url.
+    import mdtraj as md
+    traj = md.load_pdb('2M6K.pdb')
+    print traj
+
+    <mdtraj.Trajectory with 30 frames, 4462 atoms, 292 residues, and unitcells>
+
+
+Chemview provides a class MolecularViewer and helpers to let you easily display
+the protein using a cylinder and strand representation.
+
+
+    from chemview import MolecularViewer, enable_notebook
+    from chemview.contrib import topology_mdtraj
+    enable_notebook()
+
+    mv = MolecularViewer(traj.xyz[0], topology_mdtraj(traj))
+    mv.cylinder_and_strand()
+    mv
+
+
+Want to know more? Check out the handcrafted [docs](https://chemview.readthedocs.org).
