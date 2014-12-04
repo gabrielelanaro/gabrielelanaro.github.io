@@ -6,9 +6,13 @@
     <link href="/public/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <script type="text/javascript" src="/public/js/jquery-1.11.1.min.js"></script>
-
+    <!--  Ugly hack to make it work -->
     <title>
-      Gabriele Lanaro
+        {% assign current = page.url | downcase | split: '/' %}
+            {% if page.title %}{{ page.title }}
+        {% else %}
+            {{ site.posts.first.title }}
+        {% endif %}
     </title>
 
     <!-- CSS -->
