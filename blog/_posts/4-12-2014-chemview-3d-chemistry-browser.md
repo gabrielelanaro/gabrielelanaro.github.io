@@ -10,7 +10,7 @@ In the past month I've developed Chemview, an IPython notebook extensions that l
 
  - You don't have to switch programs to read/analyze/write your chemical data files.
  - You don't have to go through weird installation procedures. Chemview is a pure python module installable with pip, and, since it runs in the browser, it is automatically mutliplatform *and mobile enabled*.
- - You can build new way to visualize data using the convenient syntax of python. You can *create* new, more meaningful ways to display your result, so that you can find the patterns you're looking for.
+ - You can build new ways to visualize data using python syntax. You can *create* meaningful representations for your data, so that you can find the patterns you're looking for.
 
 ## Demo
 
