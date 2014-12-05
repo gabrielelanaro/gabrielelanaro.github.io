@@ -1,9 +1,10 @@
 ---
 layout: page
-title: Chemview: 3D Chemistry for IPython Notebook
+title: "Chemview: 3D Chemistry for IPython Notebook"
+comments: true
 ---
 
-[IPython Notebook](http://ipython.org/notebook.html) is one of the most popular tools for data analysis. It basically lets your run Python scripts with an interactive notebook interface, allowing for runnable ''notebook'' that contains both text and data. I personally use it all the time for my research.
+[IPython Notebook]("http://ipython.org/notebook.html") is one of the most popular tools for data analysis. It basically lets your run Python scripts with an interactive notebook interface, allowing for runnable ''notebook'' that contains both text and data. I personally use it all the time for my research.
 
 In the past month I've developed Chemview, an IPython notebook extensions that lets you display chemical system directly in the browser. This means that:
 
@@ -16,26 +17,29 @@ In the past month I've developed Chemview, an IPython notebook extensions that l
 Viewing stuff in chemview is fairly easy. But since it deals only with
 visualization we will use another program ([mdtraj](http://mdtraj.org)) to pull data from the web.
 
-    import mdtraj as md
-    traj = md.load_pdb('2M6K.pdb')
-    print traj
+{% highlight python %}
+import mdtraj as md
+traj = md.load_pdb('2M6K.pdb')
+print traj
+{% endhighlight %}
 
     <mdtraj.Trajectory with 30 frames, 4462 atoms, 292 residues, and unitcells>
-
 
 Chemview provides a class MolecularViewer and helpers to let you easily display
 the protein using a cylinder and strand representation.
 
+{% highlight python %}
+from chemview import MolecularViewer, enable_notebook
+from chemview.contrib import topology_mdtraj
+enable_notebook()
 
-    from chemview import MolecularViewer, enable_notebook
-    from chemview.contrib import topology_mdtraj
-    enable_notebook()
+mv = MolecularViewer(traj.xyz[0], topology_mdtraj(traj))
+mv.cylinder_and_strand()
+mv
+{% endhighlight %}
 
-    mv = MolecularViewer(traj.xyz[0], topology_mdtraj(traj))
-    mv.cylinder_and_strand()
-    mv
+This will provide an interactive output. Left Click to rotate, Wheel to zoom, Right Click to pan.
 
-<div>
 <script type="text/javascript" src="https://rawgit.com/gabrielelanaro/chemview/master/docs/source/_static/js/jquery.js"></script>
 <script type="text/javascript" src="https://rawgit.com/gabrielelanaro/chemview/master/docs/source/_static/js/three.min.js"></script>
 <script type="text/javascript" src="https://rawgit.com/gabrielelanaro/chemview/master/docs/source/_static/js/ArcballControls.js"></script>
@@ -57,9 +61,7 @@ the protein using a cylinder and strand representation.
     });
 
 </script>
-
-<canvas id="molecular_viewer"></canvas>
-</div>
+<canvas style="margin: 2em auto;" id="molecular_viewer"></canvas>
 
 
 Want to know more? Check out the handcrafted [docs](https://chemview.readthedocs.org).

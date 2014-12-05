@@ -49,6 +49,11 @@ h1.title {
     margin-bottom: 30px;
 }
 
+h1.title a {
+    font-weight: inherit;
+    text-decoration: none;
+}
+
 h2 {
     margin-top: 20px;
     font-size: 1.5em;
@@ -191,6 +196,11 @@ a:hover {
 .container {
     width: 80%;
     margin: 90px auto 0 auto;
+   
+    /*  Sticky footer  */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header */
@@ -277,6 +287,9 @@ footer {
     padding: 10px;
     width: 100%;
     border-top: 1px solid #cccccc;
+    
+    /*    Sticky footer */
+    flex: 1;
 }
 
 /* Posts */
@@ -311,6 +324,7 @@ footer {
 
 .share-buttons li{
 	display: inline-block;
+    margin: 4px;
 }
 
 
@@ -375,7 +389,7 @@ i.clickme {
     .container {
         margin: 0 auto;
         margin-top: 120px;
-        width: 1170px;
+        width: 1170px; 
     }
 
     /* Make a fixed top navigation bar

@@ -1,0 +1,22 @@
+<style>
+.date {
+    border-bottom: 1px solid #8e8e8e;
+    width: 140px;
+    padding: 8px;
+    text-align: left;
+    color: #838383;
+
+}
+    
+.readbutton a {
+    text-transform: uppercase;
+    color: #8f5902;
+    color: #204a87;
+}
+</style>
+<div class="date">{{ date | date: "%-d %b %Y" }}</div>
+<h1 class="title"><a href="{{ post.url }}">{{title}}</a></h1>
+{{ excerpt }}
+
+
+<p class="readbutton"><a href="{{post.url}}">Read more <i class="fa fa-level-up"></i> </a></p>
