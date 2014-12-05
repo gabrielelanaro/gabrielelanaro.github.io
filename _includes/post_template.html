@@ -5,7 +5,7 @@
 {% if display_share %}
 <h3>Share this Post</h3>
 <ul class="share-buttons">
-    <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fgabrielelanaro.github.io&t=" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('{{ url }}') + '&t=' + '{{post.title}}'); return false;"><img src="/public/flat_web_icon_set/color/Facebook.png"></a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fgabrielelanaro.github.io&t=" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + '{{title}}'); return false;"><img src="/public/flat_web_icon_set/color/Facebook.png"></a></li>
     <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fgabrielelanaro.github.io" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img src="/public/flat_web_icon_set/color/Google+.png"></a></li>
     <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fgabrielelanaro.github.io&title=&summary=&source=http%3A%2F%2Fgabrielelanaro.github.io" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img src="/public/flat_web_icon_set/color/LinkedIn.png"></a></li>
 </ul>
