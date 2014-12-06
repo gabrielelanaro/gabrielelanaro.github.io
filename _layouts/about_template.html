@@ -30,7 +30,7 @@ layout: default
     float: left;
 }
     
-#friends-list {
+#sidebar {
     max-width: 250px;
     font-size: 12px;
     
@@ -38,20 +38,40 @@ layout: default
     margin: 20px 0 20px 0;
 }
     
-#friends-list .side-title {
+#sidebar .side-title {
     font-size: 1.5em;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
     
+#sidebar .icon {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-color: rgb(67, 62, 64);
+    color: white;
+    text-align: center;
+    padding: 8px 0 8px 0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+    
 @media (min-width: 1170px) {
-
-    #friends-list {
-        float: none;
-        position: absolute; 
-        top: 409px; 
+    .container {
+        overflow: hidden;
     }
     
+    #sidebar {
+        float: left;
+        position: absolute; 
+        top: 320px;
+        
+    }
+ 
+    #sidebar:after {
+        content: '';
+        position:relative;
+    }
     #about-text {
         max-width: 760px;
     }
@@ -71,11 +91,15 @@ layout: default
 <!--<i class="fa fa-facebook"></i> <i class="fa fa-github"></i> <i class="fa fa-linkedin"></i> <i class="fa fa-stack-overflow"></i>-->
 </div>
 
-<div id="friends-list">
+<div id="sidebar">
     <h1 class="side-title">Friends</h1>
     <h2><a href="http://luigitiburzi.com">Luigi Tiburzi</a></h2>
     <p>A great coder with a heart. We're working together on the app Citations.</p>
     <h2><a href="http://francescopochetti.com">Francesco Pochetti</a></h2>
     <p>currently a Data Analyst at Amazon. The legend says he possesses an infinite amount of energy.</p>
+    <h1 class="side-title">Social</h1>
+    <a class="icon" href="{{ site.facebook }}"><i class="fa fa-facebook"></i></a>
+    <a class="icon" href="{{ site.googleplus }}"><i class="fa fa-google-plus"></i></a>
+    <a class="icon" href="{{ site.linkedin }}"><i class="fa fa-linkedin"></i></a>
 </div>
 

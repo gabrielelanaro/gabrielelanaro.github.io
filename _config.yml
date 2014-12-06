@@ -8,6 +8,10 @@ url: "http://gabriele.lanaro.github.io" # the base hostname & protocol for your 
 twitter_username: gabrielelanaro
 github_username:  gabrielelanaro
 
+facebook: https://www.facebook.com/glanaro
+googleplus: https://plus.google.com/+GabrieleLanaro
+linkedin: https://www.linkedin.com/pub/gabriele-lanaro/61/901/666
+
 # Build settings
 markdown: kramdown
 analytics: true
