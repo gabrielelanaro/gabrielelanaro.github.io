@@ -1,7 +1,10 @@
+<div class="date">{{ date | date: "%-d %b %Y" }}</div>
 <h1 class="title"><a href="{{ post.url }}">{{title}}</a></h1>
+
 {{ content }}
 
 <div class="separator"></div>
+
 {% if display_share %}
 <h3>Share this Post</h3>
 <ul class="share-buttons">

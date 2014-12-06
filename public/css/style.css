@@ -330,6 +330,14 @@ footer {
     margin: 4px;
 }
 
+.date {
+    border-bottom: 1px solid #8e8e8e;
+    width: 140px;
+    padding: 8px;
+    text-align: left;
+    color: #838383;
+
+}
 
 /* Pagination
 -------------------------------------------------- */
