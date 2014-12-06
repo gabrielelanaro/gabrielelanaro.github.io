@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<style>
+.container {
+    display: block;
+}
+    
+#profilepic {
+    background-image: url("/public/mypic.jpg");
+    background-size: cover;
+    background-color: white;
+    border: 1px solid #cccccc;
+    
+    border-radius: 50%;
+    width:250px;
+    height: 250px;
+    
+    float: left;
+    
+    margin-right: 70px;
+    margin-bottom: 80px;
+    position: relative;
+    top: 30px;
+}
+
+#about-text {
+    float: left;
+    max-width: 760px;
+}
+
+</style>
+<div id="profilepic">
+</div>
+
+<div id="about-text">
+    <h1 class="title">{{page.title}}</h1>
+    <p>{{content}}</p> 
+    
+<!--    Icons -->
+<!--<i class="fa fa-facebook"></i> <i class="fa fa-github"></i> <i class="fa fa-linkedin"></i> <i class="fa fa-stack-overflow"></i>-->
+</div>
+
+
