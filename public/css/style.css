@@ -90,6 +90,9 @@ hr {
     border-bottom: 1px solid #fff;
 }
 
+clearfix {
+    overflow: hidden;
+}
 
 strong {
     color: #222;

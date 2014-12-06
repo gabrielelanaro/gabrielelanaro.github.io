@@ -4,6 +4,8 @@ layout: default
 <style>
 .container {
     display: block;
+    overflow: hidden; /* clearfix */
+    position: relative;
 }
     
 #profilepic {
@@ -26,8 +28,36 @@ layout: default
 
 #about-text {
     float: left;
-    max-width: 760px;
 }
+    
+#friends-list {
+    max-width: 250px;
+    font-size: 12px;
+    
+    float: left;
+    margin: 20px 0 20px 0;
+}
+    
+#friends-list .side-title {
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+    
+@media (min-width: 1170px) {
+
+    #friends-list {
+        float: none;
+        position: absolute; 
+        top: 409px; 
+    }
+    
+    #about-text {
+        max-width: 760px;
+    }
+}
+    
+
 
 </style>
 <div id="profilepic">
@@ -41,4 +71,11 @@ layout: default
 <!--<i class="fa fa-facebook"></i> <i class="fa fa-github"></i> <i class="fa fa-linkedin"></i> <i class="fa fa-stack-overflow"></i>-->
 </div>
 
+<div id="friends-list">
+    <h1 class="side-title">Friends</h1>
+    <h2><a href="http://luigitiburzi.com">Luigi Tiburzi</a></h2>
+    <p>A great coder with a heart. We're working together on the app Citations.</p>
+    <h2><a href="http://francescopochetti.com">Francesco Pochetti</a></h2>
+    <p>currently a Data Analyst at Amazon. The legend says he possesses an infinite amount of energy.</p>
+</div>
 
