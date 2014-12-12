@@ -173,6 +173,17 @@ blockquote p:after {
   content: '\201D';
 }
 
+.tip {
+    padding: 0 0 0 20px;
+    margin: 15px 30px 15px 0;
+    border-left: 5px solid #fce94f;
+    background-color: rgb(255, 250, 213);
+}
+
+.tip p {
+    margin-top: 15px;
+}
+
 /* Rounded images */
 img {
   display: block;
