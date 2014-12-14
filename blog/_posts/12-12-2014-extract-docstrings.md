@@ -1,5 +1,5 @@
 ---
-title: How to extract docstrings from Python files with `ast`
+title: How to extract docstrings from Python files with ast
 layout: page
 categories: blog
 tags: python
