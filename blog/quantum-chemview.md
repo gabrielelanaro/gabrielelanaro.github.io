@@ -1,4 +1,11 @@
-chemview is the new molecular viewer for IPython notebook, in this tutorial we'll see how to plot molecular orbitals using it.
+When I started doing chemistry research in 2010, the set of tools available for the computational chemist were pretty old, I used to run and do calculations with GAMESS and read the output with Molden or VMD. Admittedly, that was painful, I'd really wish I had a way to have a centralize place to do my calculations.
+
+In this tutorial we'll learn how to read (or perform) quantum chemical caluclation and visualize the moelcular orbitals without leaving the IPython notebook. The software we'll use will be:
+
+- chemlab: To read output files
+- chemview: To visualize molecular orbitals in the browser
+- pyquante: To perform quantum chemical calculations
+
 
 As chemview is only a visualization library, we need to use something else to produce/get the data for the molecular orbital. In this example we'll visualize water molecular orbitals extracted from a GAMESS-US calculation using the library `cclib`.
 
