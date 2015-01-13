@@ -1,3 +1,7 @@
+---
+title: Visualizing Molecular Orbitals in the IPython notebook
+---
+
 A molecular orbital is a function that describes an electron in a molecule. Representing those functions helps us understand how the electrons are distributed in the molecule.
 
 In this post, we will learn how to read (or perform) quantum chemical calculation and visualize the mlecular orbitals without leaving the IPython notebook. 
