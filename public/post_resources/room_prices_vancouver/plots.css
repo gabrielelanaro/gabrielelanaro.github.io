@@ -1,0 +1,26 @@
+.localareas {
+  stroke : #aaaaaa;
+}
+.localareas:hover {
+  stroke-width : 4px;
+}
+
+.highlight {
+  fill : #131313;
+}
+
+text.highlight {
+  fill : #ffffff;
+}
+
+.histogram text {
+  font-size: 9pt;
+}
+
+.positive {
+  fill: #4e71c5; /* blueish */
+}
+
+.negative {
+  fill: #bc4848; /* reddish */
+}

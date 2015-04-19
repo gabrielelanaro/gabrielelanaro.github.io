@@ -154,6 +154,9 @@ pre code {
   margin-bottom: 0;
 }
 
+.center {
+  margin: auto;
+}
 /* Quotes */
 
 blockquote {
@@ -210,7 +213,7 @@ a:hover {
 .container {
     width: 80%;
     margin: 90px auto 0 auto;
-   
+
     /*  Sticky footer  */
     min-height: 100vh;
     display: flex;
@@ -292,7 +295,7 @@ nav ul li {
 }
 
 .colophon-links li {
-    color: #fff;    
+    color: #fff;
 }
 
 /* Footer */
@@ -301,7 +304,7 @@ footer {
     padding: 10px;
     width: 100%;
     border-top: 1px solid #cccccc;
-    
+
     /*    Sticky footer */
     flex: 1;
 }
@@ -350,6 +353,10 @@ footer {
 
 }
 
+div.plot {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 /* Pagination
 -------------------------------------------------- */
 
@@ -393,16 +400,16 @@ i.clickme {
         width: 80%;
     }
 */
-} 
+}
 
 @media (min-width: 990px) {
 
-    
+
     /* Layout and default */
     body {
         font-size: 18px;
     }
-    
+
     .masthead h1 {
         font-size: 1em;
     }
@@ -411,12 +418,12 @@ i.clickme {
     .container {
         margin: 0 auto;
         margin-top: 120px;
-        width: 1170px; 
+        width: 1170px;
     }
 
     /* Make a fixed top navigation bar
     ----------------------------------*/
-    
+
     nav {
         position: absolute;
         top: 10px;
@@ -429,18 +436,18 @@ i.clickme {
         display: inline;
         list-style: none;
         padding: 10px;
-    }    
-    
+    }
+
     .masthead {
         left: 0;
         top: 0;
         position: fixed;
         width: 100%;
         height: 50px;
-        
+
         z-index: 10;
     }
-    
+
     /* Where the name/logo is */
     .masthead-inner {
         top: 10px;
@@ -454,7 +461,7 @@ i.clickme {
         position: relative;
         top: 0;
         width: auto;
-        
+
         float: right;
         right: 50px;
         color: #7a7a7a;
@@ -468,21 +475,21 @@ i.clickme {
         top: 0px;
         width: 50px;
         height: 50px;
-        
+
         /* Undo the mobile view */
         box-shadow: none;
         border-radius: 0;
         margin: 0;
         background: #3465a4;
-        
+
         transition: 0.5s ease;
     }
- 
+
     .colophon-links li:hover {
         height: 60px;
     }
     .colophon-links li {
-        color: #FFF;    
+        color: #FFF;
     }
     /* Remove mobile device padding from list of posts */
     .posts {
@@ -500,7 +507,6 @@ i.clickme {
         margin-bottom: 60px;
         border: 1px solid #eee;
     }
-    
+
 
 }
-

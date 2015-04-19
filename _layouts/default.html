@@ -24,12 +24,17 @@
     {% if page.stylesheet %}
         <link rel="stylesheet" href="{{page.stylesheet}}">
     {% endif %}
+
+    {% for css_link in page.include_css %}
+        <link rel="stylesheet" href="{{ css_link }}">
+    {% endfor %}
+
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="/public/favicon.png">
     <link rel="stylesheet" href="/public/css/font-awesome.css">
     <link rel="stylesheet" href="/public/css/zenburn.css">
-   
+
     <!-- RSS -->
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
       {% if site.analytics %}
@@ -38,7 +43,7 @@
   </head>
   <body>
 
-    <header class="masthead"> 
+    <header class="masthead">
       <div class="masthead-inner">
         <a href="/"><h1>Gabriele Lanaro</h1></a>
 <!--        <p class="lead">Obsessive compulsive developer, scientist and author.</p>-->
@@ -54,7 +59,7 @@
                 <li>. . .</li>
             </ul>
         </nav>
-        
+
         <div class="colophon">
           <ul class="colophon-links">
               <a href="https://github.com/gabrielelanaro"

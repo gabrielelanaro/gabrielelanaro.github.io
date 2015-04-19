@@ -37,7 +37,7 @@ The function will return an instance of the `ast.Module` class that represents, 
 
 As you can see, the attribute body is a Python list containing a single element, of type `ast.Assignment`. Unsuprisingly this corresponds to the single assignment operation `a = value` that we performed.
 
-*How do we retrieve the left and right components of the assignment?* --- Easily enough, the `ast.Assignment` has two attributes `targets` and `values` that contain exactly those two components. 
+*How do we retrieve the left and right components of the assignment?* --- Easily enough, the `ast.Assignment` has two attributes `targets` and `values` that contain exactly those two components.
 
 {% highlight pycon %}
 >>> assignment = mod.body[0]
@@ -69,7 +69,7 @@ The main idea is that we iterate over all the nodes in `Module.body` and we use 
 'C:\\Users\\Gabriele\\Anaconda\\lib\\ast.pyc'
 >>> # stripping the pyc and adding the py
 >>> import os
->>> ast_filename = os.path.splitext(ast.__file__)[0] + '.py' 
+>>> ast_filename = os.path.splitext(ast.__file__)[0] + '.py'
 {% endhighlight %}
 
 At this point we read the file as a string and we parse it with `ast`. Then, we iterate on the expression contained in the model and we collect all of the `ast.FunctionDef` instances:
