@@ -179,14 +179,16 @@ function numByNeigh() {
 
 function popularKeywords() {
   var textWidth = $('div.content').width();
-  var chartWidth = Math.min(800, textWidth),
-      chartHeight = chartWidth / 1.2;
+  var chartWidth = 800,
+      chartHeight = 600;
 
-  var margin = {left: 50, right: 150, top: 10, bottom: 10 };
+  var margin = {left: 0, right: 150, top: 10, bottom: 10 };
 
   var hist = d3.select("#popularKeywords").append("svg")
-    .attr("width", chartWidth)
-    .attr("height", chartHeight)
+    .attr("width", Math.min(chartWidth, textWidth))
+    //.attr("height", chartHeight)
+    .attr('viewBox', "0  0 " + chartWidth + " " + chartHeight)
+    .attr("preserveAspectRatio", "true")
     .append('g')
     .attr("transform", 'translate(' + margin.left + ',' + margin.top + ')');
 
@@ -223,7 +225,7 @@ function popularKeywords() {
         .enter().append("text")
           //.attr("class", function(d) { return d.value < 0 ? "bar negative" : "bar positive"; })
           .attr("x", function(d) { return  x(Math.max(0, d.value) + 5); })
-          .attr("y", function(d) { return y(d.name) + 23; })
+          .attr("y", function(d) { return y(d.name) + 0.6 * y.rangeBand(); })
           .text( function (d) { return d.name; })
           .attr('font-weight', 'bold');
 
@@ -232,7 +234,7 @@ function popularKeywords() {
         .data(data)
         .enter().append("text")
         .attr("x", function(d) { return  x(0) + d.sign *  10; })
-        .attr("y", function(d) { return y(d.name) + 23; })
+        .attr("y", function(d) { return y(d.name) + 0.6 * y.rangeBand(); })
         .attr('text-anchor', function (d) { return d.sign == -1 ? 'end' : 'start'; } )
         .text( function (d) {
           var sign = (d.sign == -1) ? '' : '+';
@@ -248,16 +250,16 @@ function popularKeywords() {
 function postFrequency() {
   var textWidth = $('div.content').width();
 
-  var chartWidth = Math.min(800, textWidth);
-  var chartHeight = chartWidth / 1.2;
+  var chartWidth = 800;
+  var chartHeight = 600;
   var margin = { left: 10, right: 10, top: 40, bottom: 100 };
 
   var histWidth = chartWidth - margin.left - margin.right,
       histHeight = chartHeight - margin.top - margin.bottom;
 
   var hist = d3.select("#postFrequency").append("svg")
-    .attr("width", chartWidth)
-    .attr("height", chartHeight)
+    .attr("width", Math.min(chartWidth, textWidth))
+    .attr('viewBox', "0  0 " + chartWidth + " " + chartHeight)
     .append('g')
     .attr("transform", 'translate(' + margin.left + ',' + margin.top + ')');
 
