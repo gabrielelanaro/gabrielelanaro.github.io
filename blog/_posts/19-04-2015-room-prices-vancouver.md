@@ -1,5 +1,6 @@
 ---
 title: Vancouver Room Prices
+redirect_from: /blog/2015/03/25/room-prices-vancouver.html
 layout: page
 categories: blog
 tags: python

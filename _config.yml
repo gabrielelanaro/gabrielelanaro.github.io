@@ -15,3 +15,5 @@ linkedin: https://www.linkedin.com/pub/gabriele-lanaro/61/901/666
 # Build settings
 markdown: kramdown
 analytics: true
+gems:
+  - jekyll-redirect-from
