@@ -1,5 +1,6 @@
 ---
 layout: page
+redirect_from: /blog/2015/05/24/room-prices-vancouver.html
 title: "Room Prices Analysis (Part 1): Scraping Websites with Python and Scrapy"
 categories: blog
 tags: scraping tutorial data
@@ -8,7 +9,7 @@ comments: true
 
 In this post we'll describe how I downloaded 1000 room listings per day from a popular website, and extracted the information I needed (like price, description and title).
 
-This is the first of a series of 4 posts on my project [Room Prices in Vancouver](http://gabrielelanaro.github.io/blog/2015/04/19/room-prices-vancouver.html), make sure to read it for nice insight about the room situation in Vancouver!
+This is the first of a series of 4 posts on my project [Room Prices in Vancouver](http://gabrielelanaro.github.io/blog/2015/04/19/room-prices-vancouver.html), make sure to read it for nice insights about the room situation in Vancouver!
 
 # What is scraping?
 
