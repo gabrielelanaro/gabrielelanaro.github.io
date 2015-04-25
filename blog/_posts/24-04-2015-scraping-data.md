@@ -21,7 +21,7 @@ There's quite a bit of libraries that allows to do scraping in a lot of language
 
 - [mechanize](http://wwwsearch.sourceforge.net/mechanize/)
 - [scrapy](http://scrapy.org/)
-- [phan34tomjs](http://phantomjs.org/)
+- [phantomjs](http://phantomjs.org/)
 - [selenium](http://docs.seleniumhq.org/)
 
 In my case I picked scrapy because of my familiarity with it and because it has a lot of neat features out-of-the-box.
