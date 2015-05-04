@@ -129,7 +129,7 @@ pre {
     display: block;
     margin: 0 0 14px;
     padding: 15px 20px;
-    line-height: 28px;
+    line-height: 1.7em;
     white-space: pre;
     white-space: pre-wrap;
     word-break: break-all;
@@ -176,6 +176,29 @@ blockquote p:before {
 blockquote p:after {
   content: '\201D';
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: none;
+  box-shadow: 3px 4px 20px rgba(0,0,0,.15)
+}
+
+th, td {
+  padding: 1px 0px 1px 10px;
+  text-align: left;
+  border: none;
+}
+
+
+th {
+  text-transform: uppercase;
+}
+
+thead {
+  background-color: #bddeef;
+}
+
 
 .tip {
     padding: 0 0 0 20px;

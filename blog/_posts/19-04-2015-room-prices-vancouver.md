@@ -19,8 +19,8 @@ This post is a easy to read **summary** for everyone to read. I'll leave
 the discussion of the methodology and a more advanced analysis in a set of future posts
 for the interested, nerdy reader:
 
-- [Part 1: Scraping Websites with Python and Scrapy](/blog/2015/05/24/scraping-data.html)
-- Part 2: Work In Progress
+- [Part 1: Scraping Websites with Python and Scrapy](/blog/2015/04/24/scraping-data.html)
+- [Part 2: Data Cleaning and Geolocation with Python and Shapely](/blog/2015/05/03/cleaning.html)
 - Part 3: Work In Progress
 - Part 4: Work In Progress
 

@@ -223,3 +223,5 @@ Here are a few tips to avoid getting banned:
 # What's next?
 
 In the next post we'll see how to clean the raw-data and how to geolocate Vancouver neighbourhoods from latitude and longitude.
+
+[Go to Part 2: Data Cleaning and Geolocation with Python and Shapely](/blog/2015/05/03/cleaning.html)
