@@ -127,7 +127,7 @@ So far we learned how to extract docstrings from function definitions, but *what
 As you know, when you declare a class, you write a bunch of *function definitions* in the class *body* to declare its methods. This translates in `ast` as follows. Class definitions are represented as `ast.ClassDef` instances, and each `ast.ClassDef` object contains a `body` attribute that contains the function definitions (or methods). In the following example we first collect all the classes in the module, then for each class we collects its methods.
 
 {% highlight python %}
-class_definitions = [node for node in module if isinstance(node, ast.ClassDef)]
+class_definitions = [node for node in module.body if isinstance(node, ast.ClassDef)]
 method_definitions = []
 
 for class_def in class_definitions:
