@@ -9,6 +9,7 @@ In this post we'll see how to clean data, and how to deal with geographical info
 
 - [Read the Vancouver Room Prices article](http://gabrielelanaro.github.io/blog/2015/04/19/room-prices-vancouver.html)
 - [Go to Part 1 (How to scrape websites with Scrapy)](http://gabrielelanaro.github.io/blog/2015/04/24/scraping-data.html)
+- [Go to Part 3: Natural Language Modeling and Feature Selection in Python](/blog/2015/07/11/natural-language-processing-python)
 
 # Data Overview
 
@@ -195,3 +196,5 @@ The result is an association of each post with its neighbourhood. Unfortunately 
 # Next steps
 
 In this post we described the process of cleaning data and extracting features, in the next post we'll proceed with the modeling phase, where we relate the prices with the post features.
+
+[Part 3: Natural Language Modeling and Feature Selection in Python](/blog/2015/07/11/natural-language-processing-python)

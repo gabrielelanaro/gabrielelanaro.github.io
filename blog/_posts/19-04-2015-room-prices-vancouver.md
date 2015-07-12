@@ -21,8 +21,7 @@ for the interested, nerdy reader:
 
 - [Part 1: Scraping Websites with Python and Scrapy](/blog/2015/04/24/scraping-data.html)
 - [Part 2: Data Cleaning and Geolocation with Python and Shapely](/blog/2015/05/03/cleaning.html)
-- Part 3: Work In Progress
-- Part 4: Work In Progress
+- [Part 3: Natural Language Modeling and Feature Selection in Python](/blog/2015/07/11/natural-language-processing-python)
 
 # The data
 
