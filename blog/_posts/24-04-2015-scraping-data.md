@@ -46,6 +46,32 @@ The following diagram illustrates the relationships in a friendly and colorful w
 
 ![Spider diagram](/public/post_resources/part1_scraping/spider.png)
 
+# Writing the Item
+
+A first step in the crawler development is to define a data structure to contain our data. In this goes in the module ```room_spiders/items.py```. The definition is nothing special, just a class with a set of fields:
+
+{% highlight python %}
+import scrapy
+
+class CraigslistItem(scrapy.Item):
+    title = scrapy.Field()
+    content = scrapy.Field()
+    price = scrapy.Field()
+
+    maplink = scrapy.Field()
+
+    latitude = scrapy.Field()
+    longitude = scrapy.Field()
+
+    url = scrapy.Field()
+    attributes = scrapy.Field()
+    size = scrapy.Field()
+    image_links = scrapy.Field()
+    time = scrapy.Field()
+
+    bedrooms = scrapy.Field()
+{% endhighlight %}
+
 # Writing the Spider
 
 The core of the scraper is the ``Spider``. To define a Spider in Scrapy we need to create a Python file in the subdirectory ``room_spiders/spiders/`` and code a new class that inherits from ``scrapy.contrib.spiders.CrawlSpider``.
@@ -89,6 +115,7 @@ a google map link, when present.
 def parse_roo(self, response):
       url = response.url
       titlebar = response.xpath('//*[@id="pagecontainer"]/section/h2/text()').extract()
+      title = ''.join(titlebar)
       price = response.xpath('//*[@class="price"]/text()').extract()
       price = int(re.search(r'\$(\d+)', price[0]).group(1))
       content = response.xpath('//*[@id="postingbody"]').extract()[0]
