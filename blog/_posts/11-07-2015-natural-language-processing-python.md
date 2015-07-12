@@ -245,7 +245,7 @@ van_data.boxplot('price', by='neigh', figsize=(15, 10), rot=90)
 While boxplots can't tell us how the distribution looks like, they're still useful to look at the spread and skewness of the distributions. For example, we can see how ``price`` varies sensibly with the neighbourhood, and how some neighbourhoods have a much larger price range than others.
 
   <div class='tip'>
-  If you think you want more than box plots, then check [violin plots](http://stanford.edu/~mwaskom/software/seaborn/generated/seaborn.violinplot.html) with the [seaborn](http://stanford.edu/~mwaskom/software/seaborn) library.
+  If you think you want more than box plots, then check <a href="http://stanford.edu/~mwaskom/software/seaborn/generated/seaborn.violinplot.html">violin plots</a> with the <a href="http://stanford.edu/~mwaskom/software/seaborn">seaborn</a> library.
   </div>
 
 # Simple natural language modeling, the bag-of-words
@@ -575,7 +575,7 @@ Additionally, all this information comes with 95% confidence intervals, that giv
 
 There's quite a bit of models under the sun, here's a set of improvements that could be of help:
 
-- An everybody's favorite is **Random Forest**, that can perform both feature selection and regressions and doesn't overfit. However, while it gives a better accuracy overall, it doesn't provide easy inference.
+- An everybodys' favorite is **Random Forest**, that can perform both feature selection and regressions and doesn't overfit. However, while it gives a better accuracy overall, it doesn't provide easy inference.
 
 - **ElasticNet** can be used in place of Lasso, as it deals better with mutlicollinearity.
 
