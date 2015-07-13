@@ -4,7 +4,7 @@ email: gabriele.lanaro@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Gabriele Lanaro personal website. Science, Programming, Python, Technology.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://gabriele.lanaro.github.io" # the base hostname & protocol for your site
+url: "http://gabrielelanaro.github.io" # the base hostname & protocol for your site
 twitter_username: gabrielelanaro
 github_username:  gabrielelanaro
 
