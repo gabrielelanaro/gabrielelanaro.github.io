@@ -10,5 +10,33 @@ and our model predicts:
 
 A B A B C C C A B
 
-We can see that sometimes instead of predicting A, our model predicts B. We can build a matrix by counting how many times a certain pair occurs. 
+We can see that sometimes instead of predicting A, our model predicts B. We can build a matrix by counting how many times a certain pair occurs. In this case we have:
+
+A A -> 2
+A B -> 2
+A C -> 0
+B A -> 1
+B B -> 2
+B C -> 0
+C A -> 0
+C C -> 3
+C B -> 0
+
 TODO: precision matrix picture
+
+By putting those counts in a table, we obtain the confusion matrix. The usefulness of the confusion matrix lies in its interpretability, it is obvious by looking at it where the problem lies with our model.
+
+Sometimes however, especially when optimizing model parameters it is useful to have a single value. There are a series of measure that we can adopt, depending on the business problem.
+
+**precision**: it is possible to obtain precision  
+
+**micro and macro averages**
+
+**recall**
+
+**f_score**
+
+**accuracy**
+
+**cross entropy**
+
