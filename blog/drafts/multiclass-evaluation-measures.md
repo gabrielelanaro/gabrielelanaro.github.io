@@ -40,7 +40,13 @@ Sometimes, especially when optimizing model parameters, it is useful to have a s
 
 Precision can be calculated separately for each class. Graphically, for each row, we take the number on the diagonal, and divide it by the sum of all the elements in the column.
 
-p
+```
+prec_A = 2/3
+prec_B = 2/4
+prec_C = 3/3
+```
+
+The drawback of precision is that, imagine you have a problem where there are 1000 instances of A, if the model predicts A correctly for even a single time, it will have a perfect prediction score 1.
 
 
 **recall**: recall is the number of correct predictions divided by the total number of elements present in that class. Graphically, it is the value on the diagonal, divided by the sum of the values in the row. If recall is high, it means that our models manages to retrieve all instances of that class. Obtaining high recall is very easy, it's sufficient to say that everything matches that class, and you can be sure that all the elements are retrieved.
