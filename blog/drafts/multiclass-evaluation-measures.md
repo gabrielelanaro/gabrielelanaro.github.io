@@ -2,6 +2,8 @@
 
 In most machine learning courses a lot of emphasis is given to binary classification tasks. However, I found that the most useful machine learning tasks try to predict multiple classes and more often than not those classes are grossly unbalanced.
 
+One example of that was the AirBnB kaggle competition, in which I recently participated with Francesco Pochetti.
+
 Given a generic problem, a very useful and intuitive measure is the **confusion matrix**. It is built from the list of predicted classes versus the true classes. To illustrate this with an example let's imagine we have a test set with the following labels:
 
 A A A A C C C B B
@@ -28,19 +30,30 @@ By putting those counts in a table, we obtain the confusion matrix. The usefulne
 
 Sometimes however, especially when optimizing model parameters it is useful to have a single value. There are a series of measure that we can adopt, depending on the business problem.
 
-**precision**: in the binary classification stage, precision is the number of correct prediction divided by the number of total predictions made. Intuitively, a high precision for a class means that if our models predict that class, it is very likely to be true. A high precision model will be useful in those situations where we need to be certain that a certain class is predicted correctly (for example in medical diagnosis).
+**precision**: in the binary classification stage, precision is the number of correct prediction divided by the number of total predictions made. Intuitively, a high precision for a class means that if our models predict that class, it is very likely to be true. A high precision model will be useful in those situations where we need to be certain that a class is predicted correctly (for example in medical diagnosis).
 
-In the multiclass case, precision can be calculated on a per-class base. Graphically, for each row, we take the number on the diagonal, and divide it by the sum of all the elements in the column.
+Precision can be calculated separately for each class. Graphically, for each row, we take the number on the diagonal, and divide it by the sum of all the elements in the column.
+
+TODO: picture
 
 **recall**: recall is the number of correct predictions divided by the total number of elements present in that class. Graphically, it is the value on the diagonal, divided by the sum of the values in the row. If recall is high, it means that our models manages to retrieve all instances of that class. Obtaining high recall is very easy, it's sufficient to say that everything matches that class, and you can be sure that all the elements are retrieved.
 
-If we care about the predicions for each class, a way to combine the by-class precision by taking an average, this is called "macro averaging". 
+If we care about the predicions for each class, a way to combine the by-class precision by taking an average, this is called "macro averaging". This kind of averaging is useful when the dataset is unbalanced but we want to put the same emphasis on all the classes.
 
-Another way of doing that is "micro averaging"
+This is opposed to "micro averaging", where the average is made on the cumulative numerator and denominator.
 
-**f_score**: f_score is used to combine recall and precision. 
+**f1-score**: f1 score is the geometric average of precision and recall, and acts as a combined measure of the too (see also f$$_beta$$ score. This can as well be micro or macro averaged.
 
-**accuracy**
+**accuracy**: accuracy is another measure that can be useful in certain situations, especially when the problem has well balanced classes (for example in optical character recognition) and we want to put an emphasis on exact matches. Unforunately accuracy is not a good measure on very skewed data sets.
 
-**cross entropy**
+**cross entropy**: sometimes we are not interested in the actual class prediction, instead, we are trying to model the class probabilities (how probable is each class given the predictors?).
 
+This is calculated using the following formula:
+ 
+ $$
+ - \Sum_i^N y_i \ln p_i
+ $$
+ 
+ Notice that cross-entropy is often called *log-loss* and *binomial deviance*.
+
+Being a sum over every data point, this measure is also affected by heavily skewed data sets. 
