@@ -28,11 +28,13 @@ By putting those counts in a table, we obtain the confusion matrix. The usefulne
 
 Sometimes however, especially when optimizing model parameters it is useful to have a single value. There are a series of measure that we can adopt, depending on the business problem.
 
-**precision**: it is possible to obtain precision  
+**precision**: in the binary classification stage, precision is the number of correct prediction divided by the number of total predictions made. Intuitively, a high precision for a class means that if our models predict that class, it is very likely to be true. A high precision model will be useful in those situations where we need to be certain that a certain class is predicted correctly (for example in medical diagnosis).
 
-**micro and macro averages**
+In the multiclass case, precision can be calculated on a per-class base. Graphically, for each row, we take the number on the diagonal, and divide it by the sum of all the elements in the column.
 
-**recall**
+**recall**: recall is the number of correct predictions divided by the total number of elements present in that class. Graphically, it is the value on the diagona, divided by the sum of the values in the row. If recall is high, it means 
+
+
 
 **f_score**
 
