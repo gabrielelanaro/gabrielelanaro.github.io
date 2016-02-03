@@ -46,16 +46,35 @@ prec_B = 2/4
 prec_C = 3/3
 ```
 
-The drawback of precision is that, imagine you have a problem where there are 1000 instances of A, if the model predicts A correctly for even a single time, it will have a perfect prediction score 1.
+The drawback of precision is that, if you have a problem where there are 1000 instances of A, if the model predicts gives a single prediction for A, and the prediction is correct, it will have a perfect score of 1. What about the fact that the model failed to detect the other 999 instances of A? The other side of the coin is recall.
 
+**Recall** is the number of correct predictions divided by the total number of elements present in that class. Graphically, it is the value on the diagonal, divided by the sum of the values in the row. If recall is high, it means that our models manages to recover most instances of that class. Obtaining high recall is very easy, it's sufficient to say that everything matches that class, and you can be sure that all the elements are retrieved.
 
-**recall**: recall is the number of correct predictions divided by the total number of elements present in that class. Graphically, it is the value on the diagonal, divided by the sum of the values in the row. If recall is high, it means that our models manages to retrieve all instances of that class. Obtaining high recall is very easy, it's sufficient to say that everything matches that class, and you can be sure that all the elements are retrieved.
+```
+recall_A = 2/4
+recall_B = 2/3
+recall_C = 3/3
+```
 
-If we care about the predicions for each class, a way to combine the by-class precision by taking an average, this is called "macro averaging". This kind of averaging is useful when the dataset is unbalanced but we want to put the same emphasis on all the classes.
+As you can see in the case of C, if we recover all classes, and all our prediction are correct, we obtain a perfect score for both precision and recall.
 
-This is opposed to "micro averaging", where the average is made on the cumulative numerator and denominator.
+**F1-score**: f1 score is the geometric average of precision and recall, and acts as a combined measure of the too (see also f$$_beta$$ score).
 
-**f1-score**: f1 score is the geometric average of precision and recall, and acts as a combined measure of the too (see also f$$_beta$$ score. This can as well be micro or macro averaged.
+**Micro and macro averages*
+
+To extract a single number from the class precision, recall and f-score, it is possible to take an average value, there's two way to go at it.
+
+The first, is to compute the score separately for each class and then taking the average value --- this is called "macro averaging". This kind of averaging is useful when the dataset is unbalanced and we want to put the same emphasis on all the classes.
+
+recall_A + recall_B + recall_C / 3
+
+The second is to calculate the measure from the grand total of the numerator and denominator, this is called *micro averaging*. For our recall example:
+
+```
+2 * 2 * 3 / 4 + 3 + 3
+```
+
+Now let's imagine our label A has 4000 instances, and 2000 are correctly predicted.
 
 **accuracy**: accuracy is another measure that can be useful in certain situations, especially when the problem has well balanced classes (for example in optical character recognition) and we want to put an emphasis on exact matches. Unforunately accuracy suffers on unbalanced data sets, a typical example is information retrieval. 
 
@@ -69,5 +88,12 @@ Cross entropy measures how good the predicted probabilities match the given data
  
  Notice that cross-entropy is often called *log-loss*, because it can be used as a loss function in logistic regression, and *binomial deviance*, because it is the deviance of a binomial distribution.
 
+As cross entropy deals with probabilities, it evaluates the overall goodness of model, and it is often used in data science competition.
+
 TODO: references (wikipedia, link su evernote)
+
 Being a sum over every data point, this measure is also affected by heavily skewed data sets.
+
+**dcg** or discounted cumulative gain was the measure used in the AirBnB Kaggle competition, this measure is appropriate when dealing with ranked results.
+
+
