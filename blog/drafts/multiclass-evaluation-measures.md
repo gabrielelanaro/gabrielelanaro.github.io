@@ -32,11 +32,13 @@ Sometimes however, especially when optimizing model parameters it is useful to h
 
 In the multiclass case, precision can be calculated on a per-class base. Graphically, for each row, we take the number on the diagonal, and divide it by the sum of all the elements in the column.
 
-**recall**: recall is the number of correct predictions divided by the total number of elements present in that class. Graphically, it is the value on the diagona, divided by the sum of the values in the row. If recall is high, it means 
+**recall**: recall is the number of correct predictions divided by the total number of elements present in that class. Graphically, it is the value on the diagonal, divided by the sum of the values in the row. If recall is high, it means that our models manages to retrieve all instances of that class. Obtaining high recall is very easy, it's sufficient to say that everything matches that class, and you can be sure that all the elements are retrieved.
 
+If we care about the predicions for each class, a way to combine the by-class precision by taking an average, this is called "macro averaging". 
 
+Another way of doing that is "micro averaging"
 
-**f_score**
+**f_score**: f_score is used to combine recall and precision. 
 
 **accuracy**
 
