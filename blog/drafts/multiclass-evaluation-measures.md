@@ -31,6 +31,7 @@ C C -> 3
 ```
 
 By putting those counts in a table, we obtain the confusion matrix. The usefulness of the confusion matrix lies in its interpretability, it is obvious by looking at it where the problem lies with our model.
+
 ![text4384.png]({{site.baseurl}}/blog/drafts/text4384.png)
 
 Sometimes however, especially when optimizing model parameters it is useful to have a single value. There are a series of measure that we can adopt, depending on the business problem.
