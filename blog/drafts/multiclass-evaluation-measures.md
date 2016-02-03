@@ -30,17 +30,18 @@ C B -> 0
 C C -> 3
 ```
 
-By putting those counts in a table, we obtain the confusion matrix. The usefulness of the confusion matrix lies in its interpretability, it is obvious by looking at it where the problem lies with our model.
+By putting those counts in a table, we obtain the confusion matrix (see below picture). The usefulness of the confusion matrix lies in its interpretability, it is obvious by looking at it where the problem lies with our model. In this case ``C`` is predicted perfectly while we got some problems with ``A``.
 
 ![text4384.png]({{site.baseurl}}/blog/drafts/text4384.png)
 
-Sometimes however, especially when optimizing model parameters it is useful to have a single value. There are a series of measure that we can adopt, depending on the business problem.
+Sometimes, especially when optimizing model parameters, it is useful to have a single value that summarizes the content of the table. Unfortunately there is no single answer to this question, but one can choose an appropriate metric, depending on the problem at hand.
 
-**precision**: in the binary classification stage, precision is the number of correct prediction divided by the number of total predictions made. Intuitively, a high precision for a class means that if our models predict that class, it is very likely to be true. A high precision model will be useful in those situations where we need to be certain that a class is predicted correctly (for example in medical diagnosis).
+**Precision**: is the number of correct prediction divided by the number of total predictions made. Intuitively, a high precision for a class means that if our models predict that class, it is very likely to be true. A high precision model will be useful in those situations where we need to have an high confidence in our prediction (for example in medical diagnosis).
 
 Precision can be calculated separately for each class. Graphically, for each row, we take the number on the diagonal, and divide it by the sum of all the elements in the column.
 
-TODO: picture
+p
+
 
 **recall**: recall is the number of correct predictions divided by the total number of elements present in that class. Graphically, it is the value on the diagonal, divided by the sum of the values in the row. If recall is high, it means that our models manages to retrieve all instances of that class. Obtaining high recall is very easy, it's sufficient to say that everything matches that class, and you can be sure that all the elements are retrieved.
 
