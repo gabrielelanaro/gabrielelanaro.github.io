@@ -6,14 +6,19 @@ One example of that was the AirBnB kaggle competition, in which I recently parti
 
 Given a generic problem, a very useful and intuitive measure is the **confusion matrix**. It is built from the list of predicted classes versus the true classes. To illustrate this with an example let's imagine we have a test set with the following labels:
 
+```
 A A A A C C C B B
+```
 
 and our model predicts:
 
+```
 A B A B C C C A B
+```
 
 We can see that sometimes instead of predicting A, our model predicts B. We can build a matrix by counting how many times a certain pair occurs. In this case we have:
 
+```
 A A -> 2
 A B -> 2
 A C -> 0
@@ -21,12 +26,12 @@ B A -> 1
 B B -> 2
 B C -> 0
 C A -> 0
-C C -> 3
 C B -> 0
-
-TODO: precision matrix picture
+C C -> 3
+```
 
 By putting those counts in a table, we obtain the confusion matrix. The usefulness of the confusion matrix lies in its interpretability, it is obvious by looking at it where the problem lies with our model.
+![text4384.png]({{site.baseurl}}/blog/drafts/text4384.png)
 
 Sometimes however, especially when optimizing model parameters it is useful to have a single value. There are a series of measure that we can adopt, depending on the business problem.
 
@@ -57,4 +62,4 @@ Cross entropy measures how good the predicted probabilities match the given data
  Notice that cross-entropy is often called *log-loss*, because it can be used as a loss function in logistic regression, and *binomial deviance*, because it is the deviance of a binomial distribution.
 
 TODO: references (wikipedia, link su evernote)
-Being a sum over every data point, this measure is also affected by heavily skewed data sets. 
+Being a sum over every data point, this measure is also affected by heavily skewed data sets.
