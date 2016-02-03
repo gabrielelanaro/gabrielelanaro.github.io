@@ -44,16 +44,17 @@ This is opposed to "micro averaging", where the average is made on the cumulativ
 
 **f1-score**: f1 score is the geometric average of precision and recall, and acts as a combined measure of the too (see also f$$_beta$$ score. This can as well be micro or macro averaged.
 
-**accuracy**: accuracy is another measure that can be useful in certain situations, especially when the problem has well balanced classes (for example in optical character recognition) and we want to put an emphasis on exact matches. Unforunately accuracy is not a good measure on very skewed data sets.
+**accuracy**: accuracy is another measure that can be useful in certain situations, especially when the problem has well balanced classes (for example in optical character recognition) and we want to put an emphasis on exact matches. Unforunately accuracy suffers on unbalanced data sets, a typical example is information retrieval. 
 
-**cross entropy**: sometimes we are not interested in the actual class prediction, instead, we are trying to model the class probabilities (how probable is each class given the predictors?).
+**cross entropy**: sometimes we are not interested in the class predictions, instead, we are trying to model the class probabilities themselves(how probable is each class given the predictors?).
 
-This is calculated using the following formula:
+Cross entropy measures how good the predicted probabilities match the given data. This is calculated using the following formula:
  
  $$
  - \Sum_i^N y_i \ln p_i
  $$
  
- Notice that cross-entropy is often called *log-loss* and *binomial deviance*.
+ Notice that cross-entropy is often called *log-loss*, because it can be used as a loss function in logistic regression, and *binomial deviance*, because it is the deviance of a binomial distribution.
 
+TODO: references (wikipedia, link su evernote)
 Being a sum over every data point, this measure is also affected by heavily skewed data sets. 
