@@ -165,6 +165,6 @@ Unbalanced datasets are really common to come across, so first of all make sure 
 > How is the weather?
 > I'm going to the movies.
 
-Some models are really good at dealing with unbalanced data sets. For example tree methods (Boosted regression trees, random forest etc.) allow you to assign a weight to the samples, by using a weight that is the inverse frequency of the class population, you can "boost" the influence of the least represented classes.
+Some models are really good at dealing with unbalanced data sets. For example ensemble methods (Boosted regression trees, random forest etc.) allow you to assign a weight to the samples, by using a weight that is the inverse frequency of the class population, you can "boost" the influence of the least represented classes.
 
 Models like SVM instead, suffer more from this aspect, but if you have to, you can still use oversampling of the least frequent classes and subsampling of the most frequent ones.
