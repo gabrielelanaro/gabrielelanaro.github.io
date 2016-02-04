@@ -88,7 +88,7 @@ $$
 \frac {r_A + r_B + r_C}{3} = 0.7233
 $$
 
-The second is to calculate the measure from the grand total of the numerator and denominator, this is called *micro averaging* and is useful when you want to bias your classes towards the most populated class. For our recall example:
+The second is to calculate the measure from the grand total of the numerator and denominator, this is called **micro averaging** and is useful when you want to bias your classes towards the most populated class. For our recall example:
 
 $$
 \frac{2 + 2 + 3}{4 + 3 + 3} = 0.636
@@ -168,5 +168,3 @@ Unbalanced datasets are really common to come across, so first of all make sure 
 Some models are really good at dealing with unbalanced data sets. For example tree methods (Boosted regression trees, random forest etc.) allow you to assign a weight to the samples, by using a weight that is the inverse frequency of the class population, you can "boost" the influence of the least represented classes.
 
 Models like SVM instead, suffer more from this aspect, but if you have to, you can still use oversampling of the least frequent classes and subsampling of the most frequent ones.
-
- 
