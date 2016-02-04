@@ -75,7 +75,8 @@ $$
 \frac{2 + 2 + 3}{4 + 3 + 3}
 $$
 
-**accuracy**: accuracy is another measure that can be useful in certain situations, especially when the problem has well balanced classes (for example in optical character recognition) and we want to put an emphasis on exact matches. Unforunately accuracy suffers on unbalanced data sets, a typical example is information retrieval. 
+
+**accuracy**: accuracy is another measure that can be useful when the problem has well balanced classes (for example in optical character recognition) and we want to put an emphasis on exact matches. Unforunately accuracy suffers on unbalanced data sets, a typical example is information retrieval. 
 
 **cross entropy**: sometimes we are not interested in the class predictions, instead, we are trying to model the class probabilities themselves(how probable is each class given the predictors?).
 
@@ -85,7 +86,7 @@ Cross entropy measures how good the predicted probabilities match the given data
  - \Sum_i^N y_i \ln p_i
  $$
  
- Notice that cross-entropy is often called *log-loss*, because it can be used as a loss function in logistic regression, and *binomial deviance*, because it is the deviance of a binomial distribution.
+ Notice that cross-entropy is often called *log-loss*, because it can be used as a loss function in logistic regression, or *binomial deviance*, because it is the deviance of a binomial distribution.
 
 As cross entropy deals with probabilities, it evaluates the overall goodness of model, and it is often used in data science competition.
 
