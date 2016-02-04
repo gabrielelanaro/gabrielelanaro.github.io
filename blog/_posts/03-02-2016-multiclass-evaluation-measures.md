@@ -9,7 +9,7 @@ include_js: ["http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MM
 
 In most machine learning courses a lot of emphasis is given to binary classification tasks. However, I found that the most useful machine learning tasks try to predict multiple classes and more often than not those classes are grossly unbalanced.
 
-One example of that was the AirBnB kaggle competition, in which I recently participated with Francesco Pochetti. You can check the produced notebook at this link: https://github.com/FraPochetti/Airbnb/blob/0de547746b6f4cfbe4914ec1a1c4b38077c01c0e/AirbnbKaggleCompetition.ipynb.
+One example of that was the AirBnB kaggle competition, in which I recently participated with Francesco Pochetti. You can check the produced notebook at this link: <https://github.com/FraPochetti/Airbnb/blob/0de547746b6f4cfbe4914ec1a1c4b38077c01c0e/AirbnbKaggleCompetition.ipynb>.
 
 Confusion matrix
 ----------------
@@ -129,8 +129,8 @@ As cross entropy deals with probabilities, it evaluates the overall goodness of 
 
 References:
 
-1. http://data.princeton.edu/wws509/notes/a2s4.html
-2. https://en.wikipedia.org/wiki/Cross_entropy
+1. <http://data.princeton.edu/wws509/notes/a2s4.html>
+2. <https://en.wikipedia.org/wiki/Cross_entropy>
 
 
 NDCG
@@ -153,9 +153,9 @@ $$
 \frac{1}{\log_2 (r)}
 $$
 
-where r is the rank of the correct answer. You can see how the higher the rank is, the lower the score becomes.
+where r is the position of the correct answer in our prediction. You can see how the higher the rank is, the lower the score becomes. After doing that, it is necessary to take the average of the NDCG score for every prediction.
 
-What I've written is a gross semplification, the actual definition of NDCG is more general and you can learn more about it on https://en.wikipedia.org/wiki/Discounted_cumulative_gain.
+What I've written is a gross semplification, the actual definition of NDCG is more general and you can learn more about it on <https://en.wikipedia.org/wiki/Discounted_cumulative_gain>.
 
 Tips for dealing with unbalanced datasets
 -----------------------------------------
