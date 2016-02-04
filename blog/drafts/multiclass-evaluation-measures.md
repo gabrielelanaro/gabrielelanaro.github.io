@@ -66,8 +66,9 @@ To extract a single number from the class precision, recall and f-score, it is p
 
 The first, is to compute the score separately for each class and then taking the average value --- this is called "macro averaging". This kind of averaging is useful when the dataset is unbalanced and we want to put the same emphasis on all the classes.
 
-recall_A + recall_B + recall_C / 3
-
+$$
+\frac \textrm{recall_A + recall_B + recall_C}3
+$$$
 The second is to calculate the measure from the grand total of the numerator and denominator, this is called *micro averaging*. For our recall example:
 
 ```
