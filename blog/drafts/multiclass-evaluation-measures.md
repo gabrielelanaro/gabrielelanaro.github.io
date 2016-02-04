@@ -69,13 +69,11 @@ The first, is to compute the score separately for each class and then taking the
 $$
 \frac \textrm{recall_A + recall_B + recall_C}3
 $$$
-The second is to calculate the measure from the grand total of the numerator and denominator, this is called *micro averaging*. For our recall example:
+The second is to calculate the measure from the grand total of the numerator and denominator, this is called *micro averaging* and is useful when you want to preserve the "unbalance" of the classes. For our recall example:
 
-```
-2 * 2 * 3 / 4 + 3 + 3
-```
-
-Now let's imagine our label A has 4000 instances, and 2000 are correctly predicted.
+$$
+\frac{2 + 2 + 3}{4 + 3 + 3}
+$$
 
 **accuracy**: accuracy is another measure that can be useful in certain situations, especially when the problem has well balanced classes (for example in optical character recognition) and we want to put an emphasis on exact matches. Unforunately accuracy suffers on unbalanced data sets, a typical example is information retrieval. 
 
