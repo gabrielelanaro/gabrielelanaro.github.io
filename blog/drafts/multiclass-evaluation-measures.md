@@ -88,12 +88,13 @@ Cross entropy measures how good the predicted probabilities match the given data
  
  Notice that cross-entropy is often called *log-loss*, because it can be used as a loss function in logistic regression, or *binomial deviance*, because it is the deviance of a binomial distribution.
 
-As cross entropy deals with probabilities, it evaluates the overall goodness of model, and it is often used in data science competition.
-
-TODO: references (wikipedia, link su evernote)
+As cross entropy deals with probabilities, it evaluates the overall goodness of model, and it is often used in data science competitions.
 
 Being a sum over every data point, this measure is also affected by heavily skewed data sets.
 
-**dcg** or discounted cumulative gain was the measure used in the AirBnB Kaggle competition, this measure is appropriate when dealing with ranked results.
+
+TODO: references (wikipedia, link su evernote)
+
+**ndcg** or normalized discounted cumulative gain was the measure used in the AirBnB Kaggle competition, this measure is appropriate when dealing with ranked results.
 
 
