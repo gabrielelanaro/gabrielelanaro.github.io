@@ -75,7 +75,7 @@ The main idea is that we iterate over all the nodes in `Module.body` and we use 
 At this point we read the file as a string and we parse it with `ast`. Then, we iterate on the expression contained in the model and we collect all of the `ast.FunctionDef` instances:
 
 {% highlight python %}
-with fd as open(ast_filename):
+with open(ast_filename) as fd:
     file_contents = fd.read()
 
 module = ast.parse(file_contents)
