@@ -42,9 +42,9 @@ The code for splitting a set is fairly simple: the following routine takes an ar
 def partition(a):
     return {c: (a==c).nonzero()[0] for c in np.unique(a)}
 {% endhighlight %}
-## PI cking which attribute to split
+## Picking which attribute to split
 
-An aspect that we need to figure out still is how to pick which attribute to use for the splitting. Ideally, we want the attribute that give us the bettest (purest) splits.
+An aspect that we need to figure out still is how to pick which attribute to use for the splitting. Ideally, we want the attribute that give us the better (purest) splits.
 
 A standard measure of "purity" can be obtained by taking the opposite of a quantity called Shannon entropy (if you've ever taken thermodynamics, you'll know that entropy, is a measure of "disorder" in a system).
 
