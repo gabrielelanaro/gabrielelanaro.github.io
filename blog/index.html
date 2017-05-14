@@ -1,9 +1,11 @@
 ---
 layout: default
 ---
+
 {% for post in site.posts %}
+
 {% if post.categories contains "blog" %}
-   
+
     {% assign title = post.title %}
     {% assign url = page.url %}
     {% assign excerpt = post.excerpt %}
@@ -12,4 +14,3 @@ layout: default
 
 {% endif %}
 {% endfor %}
-

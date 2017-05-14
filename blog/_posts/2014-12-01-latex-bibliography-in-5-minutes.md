@@ -10,7 +10,7 @@ You're ready to submit your paper, but there's one last thing your supervisor/pu
 
 > Why don't you put the date in bold, and semicolon between author names?
 
-Latex distributions come with plenty of styles available, and some of them come directly from  journal publishers. Sometimes those are not enough and you have to resort to make a custom style. Altought the process is not as straighforward as I expected it to be (as often happens with LaTeX), it is definitely simple. 
+Latex distributions come with plenty of styles available, and some of them come directly from  journal publishers. Sometimes those are not enough and you have to resort to make a custom style. Altought the process is not as straighforward as I expected it to be (as often happens with LaTeX), it is definitely simple.
 
 When you include a bibliography with bibtex, you tipically have a structure like this:
 
@@ -25,12 +25,12 @@ When you include a bibliography with bibtex, you tipically have a structure like
 \bibliography{list}
 {% endhighlight %}
 
-And the project would contain a file named list.bib that contains the bibliography in bibtex style. Bibliography styles are defined by files with extension bst (in the previous example I used the style plain.bst located in). 
+And the project would contain a file named list.bib that contains the bibliography in bibtex style. Bibliography styles are defined by files with extension bst (in the previous example I used the style plain.bst located in).
 
 ## Creating a custom bst file
 
 Open a terminal and type:
-  
+
 {% highlight bash %}
 latex makebst
 {% endhighlight %}
