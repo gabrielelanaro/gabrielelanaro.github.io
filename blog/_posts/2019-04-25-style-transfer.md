@@ -175,7 +175,7 @@ CORS stands from [Cross Origin Resource Sharing](https://developer.mozilla.org/e
 
 While we were quite happy with the overall results, we did face some issues while building the application and we have idea for further improvements.
 
-****We experienced starting times of 3-5 minutes for the EC2 instances, which translate having to wait a long time before seeing any image on the screen. Having an instance running 24/7 would easily solve this issue ($$$). Another solution would be to implement a proper job runner that would automatically reuse existing instances instead of spinning up a new one every time.
+We experienced starting times of 3-5 minutes for the EC2 instances, which translate having to wait a long time before seeing any image on the screen. Having an instance running 24/7 would easily solve this issue ($$$). Another solution would be to implement a proper job runner that would automatically reuse existing instances instead of spinning up a new one every time.
 
 Also, as VGG-19 is very memory intensive, we could also have tried using a smaller model or a more efficient style transfer implementation.
 
