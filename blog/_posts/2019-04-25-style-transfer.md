@@ -26,10 +26,7 @@ include_js: ["http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MM
 First things first. Before diving into the implementation, let’s see how the web application looks like when in action. You can check it out yourself at [visualneurons.com](http://visualneurons.com/) and below you can find a quick demo.
 The user chooses an artwork from the drop-down menu, uploads a personal picture, and then lets the magic happen. The Deep Learning model, under the curtains, blends the style of the piece of art with the content of the photo, creating a brand new image.
 
-***************VIDEO/GIF ****************** 
-
-[ ] @glanaro make the video
-
+<iframe src="https://drive.google.com/file/d/1DjR5sj9apwxqEQABJLHW2EyUCro2n-Vx/preview" width="640" height="480"></iframe>
 
 # Style Transfer in a nutshell
 
@@ -111,19 +108,19 @@ To serve the client’s code all is needed is a simple frontend server capable o
 
 When it comes to redirecting traffic to the bucket, it is as simple as buying a domain on Amazon Route 53 and pointing it to S3. An in-depth tutorial on how to achieve this is available [here](https://francescopochetti.com/is-this-movie-a-thrillerinvoking-a-sagemaker-deep-learning-model-in-an-end-to-end-serverless-web-application/#Creating_an_S3_Bucket_to_host_a_website) and [here](https://francescopochetti.com/is-this-movie-a-thrillerinvoking-a-sagemaker-deep-learning-model-in-an-end-to-end-serverless-web-application/#Buy_a_domain_on_Route_53_and_redirect_traffic_to_S3). 
 
-Something worth mentioning when setting up the website, and the client websocket which comes with it, is a quick note on security. For obvious reasons, whenever building a web application, it is highly recommended to buy a SSL certificate and secure the domain with https. Running things through this protocol is good, as any communication between a browser and a server is encrypted. This also means, though, that we have to do some extra work to decrypt messages whenever either the browser or the server needs to do something useful with those messages. This is the case of our application, which is based on JSON-formatted strings sent back and forth across the web.As we were running the dev version of the app directly via S3 (e.g. via https), what we noticed was that the python server websocket would not understand the initial connection message from the javascript client websocket. Given the additional complexity of dealing with this issue, we decided to compromise on security and stick to the http protocol instead. This is why our application runs on http://visualneurons.com/ and **not on** https://visualneurons.com/. This also means the URL the javascript websockets needs to connect to is of the form `"``**ws**``://" + EC2_public_dns + ":8000/styletransfer"` and **not** `"``**wss**``://" + EC2_public_dns + ":8000/styletransfer"`. Small details making a whole lot of a difference.
+Something worth mentioning when setting up the website, and the client websocket which comes with it, is a quick note on security. For obvious reasons, whenever building a web application, it is highly recommended to buy a SSL certificate and secure the domain with https. Running things through this protocol is good, as any communication between a browser and a server is encrypted. This also means, though, that we have to do some extra work to decrypt messages whenever either the browser or the server needs to do something useful with those messages. This is the case of our application, which is based on JSON-formatted strings sent back and forth across the web.As we were running the dev version of the app directly via S3 (e.g. via https), what we noticed was that the python server websocket would not understand the initial connection message from the javascript client websocket. Given the additional complexity of dealing with this issue, we decided to compromise on security and stick to the http protocol instead. This is why our application runs on http://visualneurons.com/ and **not on** https://visualneurons.com/. This also means the URL the javascript websockets needs to connect to is of the form `"ws://" + EC2_public_dns + ":8000/styletransfer"` and **not** `"wss://" + EC2_public_dns + ":8000/styletransfer"`. Small details making a whole lot of a difference.
 
 ## Backend: Writing a job runner using lambda and EC2
 
 Since we didn’t want to keep an expensive GPU instance running 24/7 for our demo, we designed a way to spin up EC2 systems on demand using API Gateway and Lambda. The code that spins up the instance and return its full address, relies on the amazon [boto](https://aws.amazon.com/sdk-for-python/) library for Python. For reference, [](https://github.com/gabrielelanaro/ml-prototypes/blob/master/prototypes/styletransfer/lambda.py)the full code of the function can be found [at this link](https://github.com/gabrielelanaro/ml-prototypes/blob/master/prototypes/styletransfer/lambda.py). In this section we illustrate the step necessary to configure and run the backend.
 
-**Preparing the base image (EC2)**
+### Preparing the base image (EC2)
 To prepare our base image, we started from one of the amazon [deep learning AMIs](https://aws.amazon.com/machine-learning/amis/) and customized it to our needs (we only needed to run styletransfer once so that the model files for VGG are already cached on the server). We then created our own AMI using EC2 so that the instance is already set up at start time. 
 
-**Configure the security settings (EC2)**
+### Configure the security settings (EC2)
 The port we listen on the websocket server (8000) has to be open. This is easily achieved using [Security Groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html).
 
-**Write our Lambda (Lambda)**
+### Write our Lambda (Lambda)
 Lambda will be responsible to create an EC2 instance using the `run_instances` method, and will need to provide the `AMI_ID` (the id of our newly created AMI), as well as our security group. It’s also necessary to provide an initialization script (`UserData` argument), which we will discuss more in the following section. Below is an example of the `run_instances` call.
 
 
@@ -168,11 +165,12 @@ Note that the init script is run as root, while we wanted to run our websocket s
 
 A better practice would have been to use something like [supervisor](http://supervisord.org/) to manage, starting, stopping and logging of the websocket server. But we opted for simplicity.
 
-**Enable CORS (API Gateway)**
+### Enable CORS (API Gateway)
 CORS stands from [Cross Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). This is a mechanism getting triggered as soon as two resources sitting on different domains try sending data to each other. The two resources are the frontend, i.e. the website sitting on `http://visualneurons.com`, and the backend API Gateway, sitting on `https://myapi.execute-api.eu-west-1.amazonaws.com`. When the API returns the output of Lambda to the frontend, the browser checks whether this communication is allowed by looking at the headers of the resource being sent. Specifically, the header in question is `**'Access-Control-Allow-Origin': '*'**`. If this is missing, the browser blocks the incoming JSON. When working within the AWS ecosystem and dealing with web development, make sure you check the following two boxes to avoid suffering from some nasty headaches:
 
 1. Enable CORS within the Amazon API Gateway console. Don’t forget to deploy your API afterwards. 
 2. Wrap Lambda’s output around the headers you specifically need. This is what the function `format_response` is for, [here](https://github.com/gabrielelanaro/ml-prototypes/blob/master/prototypes/styletransfer/lambda.py).
+
 ## Issues and potential improvements
 
 While we were quite happy with the overall results, we did face some issues while building the application and we have idea for further improvements.
