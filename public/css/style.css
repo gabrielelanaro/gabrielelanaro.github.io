@@ -214,9 +214,9 @@ thead {
 /* Rounded images */
 img {
   display: block;
-  margin: 0 0 15px;
+  margin: auto auto 15px; /* centered */
   border-radius: 5px;
-  max-width: 760px;
+  max-width: 1024px;
 }
 
 
