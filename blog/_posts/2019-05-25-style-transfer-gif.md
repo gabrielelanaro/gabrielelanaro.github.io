@@ -60,7 +60,7 @@ By doing research there were some options. The obvious one was to implement one 
 
 Other potential improvements (inspired by [Ruder et al 2016](https://arxiv.org/abs/1604.08610)) were:
 
-- Initialize the optimizer (Adam) state between frames 
+- Initialize the the optimizer (Adam) state once and maintain it between frames 
 - Initialize the current frame with the previous frame
 - Add a “temporal consistency loss” that tries to match one or more of the previous frames
 
