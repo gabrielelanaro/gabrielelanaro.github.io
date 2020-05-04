@@ -2,104 +2,101 @@
 layout: default
 ---
 <style>
-.container {
-    display: block;
-    overflow: hidden; /* clearfix */
-    position: relative;
-}
-    
-#profilepic {
-    background-image: url("/public/mypic.jpg");
-    background-size: cover;
-    background-color: white;
-    border: 1px solid #cccccc;
-    
-    border-radius: 50%;
-    width:250px;
-    height: 250px;
-    
-    float: left;
-    
-    margin-right: 70px;
-    margin-bottom: 80px;
-    position: relative;
-    top: 30px;
-}
-
-#about-text {
-    float: left;
-}
-    
-#sidebar {
-    max-width: 250px;
-    font-size: 12px;
-    
-    float: left;
-    margin: 20px 0 20px 0;
-}
-    
-#sidebar .side-title {
-    font-size: 1.5em;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-    
-#sidebar .icon {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    background-color: rgb(67, 62, 64);
-    color: white;
-    text-align: center;
-    padding: 8px 0 8px 0;
-    border-radius: 50%;
-    cursor: pointer;
-}
-    
-@media (min-width: 1170px) {
     .container {
+        display: block;
         overflow: hidden;
+        /* clearfix */
+        position: relative;
     }
-    
-    #sidebar {
+
+    #profilepic {
+        background-image: url("/public/mypic.jpg");
+        background-size: cover;
+        background-color: white;
+        border: 1px solid #cccccc;
+
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+
         float: left;
-        position: absolute; 
-        top: 320px;
-        
+
+        margin-right: 70px;
+        margin-bottom: 80px;
+        position: relative;
+        top: 30px;
     }
- 
-    #sidebar:after {
-        content: '';
-        position:relative;
-    }
+
     #about-text {
-        max-width: 760px;
+        float: left;
     }
-}
-    
 
+    #sidebar {
+        max-width: 250px;
+        font-size: 12px;
 
+        float: left;
+        margin: 20px 0 20px 0;
+    }
+
+    #sidebar .side-title {
+        font-size: 1.5em;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    #sidebar .icon {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background-color: rgb(67, 62, 64);
+        color: white;
+        text-align: center;
+        padding: 8px 0 8px 0;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    @media (min-width: 1170px) {
+        .container {
+            overflow: hidden;
+        }
+
+        #sidebar {
+            float: left;
+            position: absolute;
+            top: 320px;
+
+        }
+
+        #sidebar:after {
+            content: '';
+            position: relative;
+        }
+
+        #about-text {
+            max-width: 760px;
+        }
+    }
 </style>
 <div id="profilepic">
 </div>
 
 <div id="about-text">
     <h1 class="title">{{page.title}}</h1>
-    <p>{{content}}</p> 
-    
-<!--    Icons -->
-<!--<i class="fa fa-facebook"></i> <i class="fa fa-github"></i> <i class="fa fa-linkedin"></i> <i class="fa fa-stack-overflow"></i>-->
+    <p>{{content}}</p>
+
+    <!--    Icons -->
+    <!--<i class="fa fa-facebook"></i> <i class="fa fa-github"></i> <i class="fa fa-linkedin"></i> <i class="fa fa-stack-overflow"></i>-->
 </div>
 
 <div id="sidebar">
-    <h1 class="side-title">Friends</h1>
+    <!-- <h1 class="side-title">Friends</h1>
     <h2><a href="http://luigitiburzi.com">Luigi Tiburzi</a></h2>
     <p>A great coder with a heart. We're working together on the app Citations.</p>
     <h2><a href="http://francescopochetti.com">Francesco Pochetti</a></h2>
-    <p>currently a Data Analyst at Amazon. The legend says he possesses an infinite amount of energy.</p>
+    <p>currently a Data Analyst at Amazon. The legend says he possesses an infinite amount of energy.</p> -->
     <h1 class="side-title">Social</h1>
     <a class="icon" href="{{ site.facebook }}"><i class="fa fa-facebook"></i></a>
-    <a class="icon" href="{{ site.googleplus }}"><i class="fa fa-google-plus"></i></a>
     <a class="icon" href="{{ site.linkedin }}"><i class="fa fa-linkedin"></i></a>
 </div>
-
