@@ -53,16 +53,16 @@ Nice! We have a model for the user memory, which essentially involves a single p
 
 Could we simply fit the exponential curve to a bunch of data points and find **S**? 
 
-This could perhaps be achieved by using the following procedure (I'm sure some researcher has done something on these lines on real people):
+This could perhaps be achieved by using the following procedure (I'm sure some researcher has done something along these lines on real people):
 
 - we take **n** different cards that the subject has never seen and that have the same difficulty
 - we show one card to the subject once
-- we test at later time if the subject was able to recall a card
-- we repeat the same process with other cards to determined how long does the subject takes to forget a card.
+- we test at later time if the subject was able to recall the card
+- we repeat the same process with other cards so that we can estimate **S**
 
 This is however not how a flashcard app works. Ideally we would like the user to input a bunch of cards of variable difficulty, and start learning right away without having to do any calibration or experiments. Besides, if the user input their own cards of varying difficulty we won't have a reliable estimate of **S** anyway!
 
-We would like the flashcard app to have a loop as follows:
+We would like the flashcard app to have a feedback loop as follows:
 
 - We have `RepetitionSystem` which chooses which card we should show the user
 - We show the card to the user and collect feedback (wether the user recalled the item correctly or not)
@@ -79,7 +79,7 @@ while True:
 
 One of the most pressing issue in trying to estimate **S** is not at constant and depends to a lot of factors. It will, at a bare minimum, depend on our current knowledge of that card.
 
-\For example, let's say I want to estimate **S** for the card **i**. If the user never saw that card, then they will forget it at a rate **S**. Now, let's show the same card again to the user, wether the user remembers the card or not, their knowledge would have already improved (because they saw the card twice), which means that **S** has already changed!
+For example, let's say I want to estimate **S** for the card **i**. If the user never saw that card, then they will forget it at a rate **S**. Now, let's show the same card again to the user, wether the user remembers the card or not, their knowledge would have already improved (because they saw the card twice), which means that **S** has already changed!
 
 ![mindblown]({{site.baseurl}}/public/post_resources/flashcards/tim-and-eric-mind-blown.gif)
 
@@ -88,21 +88,24 @@ To complicate things, the user may have already studied the card outside of the 
 What can we do to estimate **S** then if it constantly changes? One solution, and the one I will try to explore is to *model* **S** by making certain assumptions and try to estimate the model from data using statistics.
 
 
-The first model I'd like to explore, is modeling the change **S** as a sum of contributions
+The first model I'd like to explore, is expressing **S** as a sum of contributions. Wether we recall the card correctly or not, our knowledge improves:
 
 ```
+# S_c and S_w are constrained to be positive numbers
 S = S_c * n_correct + S_w * n_wrong
 ```
 
-While this model is certainly unrealistic, I believe it can be useful as a stepping stone before extending it to take into account more factors (such as the card difficulty or previous knowledge).
+Note that we use two parameters **S_c** and **S_w** which represent the how much does the knowledge of that card has improved if we recalled the card correctly or incorrectly.
+
+While this model is certainly unrealistic, I believe it can be useful as a stepping stone before trying to take into account more factors (such as the card difficulty or pre-existing knowledge).
 
 ## Building a spaced repetition system
 
 Once we have a good model for the user memory, how can we build a spaced repetition system? This is another quite difficult question. 
 
-Let's assume we have 10 cards that are unknown to the user. The objective of the spaced repetition system is to  the user to a point wher e they are able to comfortably recall all the cards.
+Let's assume we have 10 cards that are unknown to the user. The objective of the spaced repetition system is to take the user to a point where he/she is able to comfortably recall all the cards.
 
-What can we do to facilitate this process? The only point of interaction (for the moment) is the choice of which card we will show to the user.
+What can we do to facilitate this process? The only point of interaction between the system and the user (for the moment) is the choice of which card the system will show to the user.
 
 If we call the "knowledge of all cards" our "reward", we can formulate this problem as:
 
