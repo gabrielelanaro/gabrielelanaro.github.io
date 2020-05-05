@@ -26,7 +26,9 @@ In this post series I will try to address this problem and share my findings!
 
 ## Modeling memory
 
-How can we design a spaced repetition system? First of all let's model the memory of the user. Say we have a flashcard previously unknown. We study it, and at least while it's in front of us we should be able to recall it correctly (just by reading it). If we hide the card, we can expect a few moments later to forget about it. How fast do we forget it? A popular model is based on a negative exponential function (the model is commonly referred as [Forgetting curve](https://en.wikipedia.org/wiki/Forgetting_curve)) 
+How can we design a spaced repetition system? First of all let's model the memory of the user. Say we have a flashcard previously unknown. We study it, and at least while it's in front of us we should be able to recall it correctly (just by reading it). If we hide the card, we can expect a few moments later to forget its content.
+
+How fast do we forget it? A popular model is based on a negative exponential function (the model is commonly referred as [Forgetting curve](https://en.wikipedia.org/wiki/Forgetting_curve)) 
 
 $$
 R = e^{-\frac{t}{S}}
@@ -45,7 +47,7 @@ $$
 
 where $$p(r=1)$$ just means the probability that if we test the user at time t, the user will recall the fact correctly.
 
-Nice! We have a model for the user memory, which essentially involves a single parameter, **S**, which tells us how well do we know a certain fact. Memorizing something, simply means having a high probability to recall a certain fact.
+Nice! We have a model for the user memory, which essentially involves a single parameter, **S**, that tells us how well do we know a certain fact. Memorizing something, simply means having a high probability to recall a certain fact.
 
 ## Estimating S from data
 
