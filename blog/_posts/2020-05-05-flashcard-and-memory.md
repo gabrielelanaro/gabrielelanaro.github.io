@@ -18,7 +18,7 @@ Two main factors are (at least anecdotally) important for learning:
 
 2. **Spaced repetition**: memorizing is more efficient by scheduling card reviews. The famous app Anki does this by asking the user to rate the quality of its memory and scheduling review at longer and longer time intervals.
 
-One of the issue with Anki is that the spaced repetition intervals are not entirely customizable and are fixed to a particular schedule. I thought it would be interesting to research a way to make the spaced repetition system learn and adapt to the user and the fact that is to be learned. The beauty of this problem is that we are trying to build a system capable of collecting data and helping the user improving its foreign language knowledge. It is quite a refreshing break from standard supervised learning where data needs to be annotated separately!
+One of the issue with Anki is that the spaced repetition intervals are not entirely customizable and are fixed to a particular schedule. I thought it would be interesting to research a way to make the spaced repetition system learn and adapt to the user, automatically from data. The beauty of this problem is that we are trying to build a system capable of collecting data and helping the user improving its foreign language knowledge. It is quite a refreshing break from standard supervised learning where data needs to be annotated separately!
 
 In this post series I will try to address this problem and share my findings!
 
