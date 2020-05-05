@@ -62,7 +62,7 @@ We would like the flashcard app to have a loop as follows:
 
 - We have `RepetitionSystem` which chooses which card we should show the user
 - We show the card to the user and collect feedback (wether the user recalled the item correctly or not)
-- We pass the feebdack to the `RepetitionSystem` so that it can learn and decide which card to show next.
+- We pass the feedback to the `RepetitionSystem` so that it can learn and decide which card to show next.
 
 {% highlight python %}
 repetition_system = RepetitionSystem()
@@ -102,7 +102,7 @@ What can we do to facilitate this process? The only point of interaction (for th
 
 If we call the "knowledge of all cards" our "reward", we can formulate this problem as:
 
-> estaibilish a card-selection strategy so that we maximize our reward.
+> estabilish a card-selection strategy so that we maximize our reward.
 
 **What is our card selection strategy?** It is a probability distribution of picking a certain card given our knowledge model (which encapsulate the state of the world)
 
@@ -115,7 +115,7 @@ If we call the "knowledge of all cards" our "reward", we can formulate this prob
 
 ## Simplifying things: bandits
 
-While I haven't look very much into the above reinforcement learning formuation because it seems to be quite involved (see [Dragan et al.](https://people.eecs.berkeley.edu/~reddy/files/DRL_Tutor_NIPS17_MT_Workshop.pdf) and [Gomez-Rodriguez](https://www.pnas.org/content/116/10/3988)), maybe we can actually simplify the problem. What if we defined a much easier reward signal?
+While I haven't look very much into the above reinforcement learning formulation because it seems to be quite involved (see [Dragan et al.](https://people.eecs.berkeley.edu/~reddy/files/DRL_Tutor_NIPS17_MT_Workshop.pdf) and [Gomez-Rodriguez](https://www.pnas.org/content/116/10/3988)), maybe we can actually simplify the problem. What if we defined a much easier reward signal?
 
 I thought about defining the problem this way:
 
