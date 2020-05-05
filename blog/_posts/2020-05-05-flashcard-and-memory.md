@@ -10,11 +10,11 @@ include_js: ["http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MM
 ![flashcard]({{site.baseurl}}/public/post_resources/flashcards/flashcard_cover.webp)
 
 
-For the past year or so I've been trying to learn German, and the most difficult part in language learning is certainly vocabulary learning. The existing apps do a pretty good job at helping with vocabulary learning, with the only issue that creating the flashcards is a big time sink. Initally the idea was to have a pool of words one wants to learn, and then the app would just quiz the user and try to maximize the learning of the user. 
+For the past year or so I've been trying to learn German, and the most difficult part in language learning is certainly vocabulary learning. The existing apps do a pretty good job at helping with vocabulary learning, with the only issue that creating the flashcards is a big time sink. Initially the idea was to have a pool of words one wants to learn, and then the app would just quiz the user and try to maximize the learning of the user. 
 
 Two main factors are (at least anecdotally) important for learning:
 
-1. **Context**: When learning new vocabulary, it is very useful to learn words in context, for example pictures and related words. If we could group realted words and pictures together, the learning would (ideally) be more efficient.
+1. **Context**: When learning new vocabulary, it is very useful to learn words in context, for example pictures and related words. If we could group related words and pictures together, the learning would (ideally) be more efficient.
 
 2. **Spaced repetition**: memorizing is more efficient by scheduling card reviews. The famous app Anki does this by asking the user to rate the quality of its memory and scheduling review at longer and longer time intervals.
 
@@ -24,7 +24,7 @@ In this post series I will try to address this problem and share my findings!
 
 ## Modeling memory
 
-How can we design a spaced repetition system? First of all let's model the memory of the user. Say we have a flashcard previously unknown. We study it, and at least while it's in front of us we should be able to recall it correctly (just by reading it). If we hide the card, we can expect a few moments later to forget about it. How fast do we forget it? A popular model is using an exponential curve to model this phenomenon (the model is commonly referred as [Forgetting curve](https://en.wikipedia.org/wiki/Forgetting_curve)) 
+How can we design a spaced repetition system? First of all let's model the memory of the user. Say we have a flashcard previously unknown. We study it, and at least while it's in front of us we should be able to recall it correctly (just by reading it). If we hide the card, we can expect a few moments later to forget about it. How fast do we forget it? A popular model is based on a negative exponential function (the model is commonly referred as [Forgetting curve](https://en.wikipedia.org/wiki/Forgetting_curve)) 
 
 $$
 R = e^{-\frac{t}{S}}
@@ -56,9 +56,9 @@ This could perhaps be achieved by using the following procedure (I'm sure some r
 - we test at later time if the subject was able to recall a card
 - we repeat the same process with other cards to determined how long does the subject takes to forget a card.
 
-This is however not how a flashcard app works. Ideally we would like the user to input a bunch of cards of variable difficulty, and start learning right away without having to do any calibration or experiments. Besides, if the user input their own cards of varying difficulty we won't have a realiable estimate of **S** anyway!
+This is however not how a flashcard app works. Ideally we would like the user to input a bunch of cards of variable difficulty, and start learning right away without having to do any calibration or experiments. Besides, if the user input their own cards of varying difficulty we won't have a reliable estimate of **S** anyway!
 
-We would like the flashcard app to have a loop like the following one:
+We would like the flashcard app to have a loop as follows:
 
 - We have `RepetitionSystem` which chooses which card we should show the user
 - We show the card to the user and collect feedback (wether the user recalled the item correctly or not)
