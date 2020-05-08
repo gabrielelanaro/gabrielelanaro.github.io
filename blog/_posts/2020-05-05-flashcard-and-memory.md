@@ -68,14 +68,14 @@ We would like the flashcard app to have a feedback loop as follows:
 - We show the card to the user and collect feedback (wether the user recalled the item correctly or not)
 - We pass the feedback to the `RepetitionSystem` so that it can learn and decide which card to show next.
 
-{% highlight python %}
+```python
 repetition_system = RepetitionSystem()
 
 while True:
     card = repetition_system.select_card()
     r = user_input(card)
     repetition_system.feedback(card=card, recalled=r)
-{% endhighlight %}
+```
 
 One of the most pressing issue in trying to estimate **S** is not at constant and depends to a lot of factors. It will, at a bare minimum, depend on our current knowledge of that card.
 
@@ -140,8 +140,7 @@ Now we have all the elements in place to sketch what our system. It may look lik
 
 1. We have a  knowledge model based on some sort of regression, which tells us what is the reward that we can expect by picking a certain card. This knowledge model knows about the interaction of the user with each card and is able to estimate the parameters **S_c** and **S_w** that can be used to estimate **S** and therefore the probability of a correct recall
 
-{% highlight python %}
-
+```python
 class KnowledgeModel:
 
     def train(self, data):
@@ -151,13 +150,11 @@ class KnowledgeModel:
     def prob_recall(self, t, features, params):
         S = params.S_c * features.n_correct + params.S_w * features.n_wrong
         return np.exp(-t / S) 
-
-{% endhighlight %}
+```
 
 2. We have a `RepetitionSystem` that will use the knowledge model to choose which card to pick, based on the estimated reward. Note that the repetition system is responsible to keep track on the user interactions with the system.
 
-{% highlight python %}
-
+```python
 class RepetitionSystem:
 
     def __init__(self, n_cards: int, knowledge_model: KnowledgeModel):
@@ -197,7 +194,6 @@ def reward(p, t):
     # this is the expected reward, i.e. an average weighted by the probability of each possible
     # reward
     return p * t + (1 - p) * 0
-
-{% endhighlight %}
+```
 
 This is a very simplified overview on how a repetition system may look like, but will it actually work? (Spoiler alert: no). We'll experiments and resolve issue as they arise and play around with this system in future posts of this series!
