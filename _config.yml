@@ -6,7 +6,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://gabrielelanaro.github.io" # the base hostname & protocol for your site
 twitter_username: gabrielelanaro
-github_username:  gabrielelanaro
+github_username: gabrielelanaro
 
 facebook: https://www.facebook.com/glanaro
 googleplus: https://plus.google.com/+GabrieleLanaro
@@ -15,5 +15,9 @@ linkedin: https://www.linkedin.com/pub/gabriele-lanaro/61/901/666
 # Build settings
 markdown: kramdown
 analytics: true
-gems:
+plugins:
   - jekyll-redirect-from
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
