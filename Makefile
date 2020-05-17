@@ -14,4 +14,4 @@ build:
 	cp -r blog/_posts/public/post_resources/* public/post_resources
 	rm -r blog/_posts/public
 
-.PHONY: serve
+.PHONY: serve build
