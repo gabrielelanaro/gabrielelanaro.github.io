@@ -1,4 +1,3 @@
-
 ---
 title: "Probabilistic programming with Pyro: modeling the forgetting curve"
 layout: page
